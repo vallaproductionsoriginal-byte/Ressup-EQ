@@ -1,0 +1,15 @@
+*
+!.gitignore
+!README.md
+!LICENSE
+!THIRD_PARTY_NOTICES.md
+!SHA256SUMS.txt
+!Ressup-EQ-1.16.1-macOS-AppleSilicon-VST3.zip
+!Ressup-EQ-1.16.1-macOS-AppleSilicon-AU.zip
+!Ressup-EQ-1.16.1-Windows-x64-VST3.zip
+!licenses/
+!licenses/AudioUnitSDK-LICENSE.txt
+!licenses/JUCE-LICENSE.md
+!licenses/JUCE-THIRD-PARTY-LICENSES.txt
+!licenses/JUCE.spdx.json
+!licenses/VST3-SDK-LICENSE.txt
