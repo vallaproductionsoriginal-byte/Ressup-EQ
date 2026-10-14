@@ -69,15 +69,17 @@ higher Detail.
 
 ## Download and install
 
+**[Download Ressup-EQ 1.16.2](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.16.2)** — all three bundles include the updated proprietary license.
+
 Choose the ZIP for your system, extract it and copy the entire plug-in bundle
 to the matching folder below. Close your DAW before replacing an existing
 version, then reopen it and rescan plug-ins if needed.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](Ressup-EQ-1.16.2-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](Ressup-EQ-1.16.2-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](Ressup-EQ-1.16.2-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.16.2/Ressup-EQ-1.16.2-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.16.2/Ressup-EQ-1.16.2-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.16.2/Ressup-EQ-1.16.2-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
 
 The Mac VST3 and AU have been validated on macOS. The Windows build has
 **not yet been tested in a Windows DAW**. Mac downloads are not Apple notarized.
