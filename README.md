@@ -90,5 +90,4 @@ Original Ressup-EQ code and documentation: [MIT License](LICENSE),
 © 2026 Francesco Valla. Third-party components retain their own licenses;
 see [Third-Party Notices](THIRD_PARTY_NOTICES.md).
 
-This private repository contains compiled plug-ins, the interface screenshot
-and documentation. Source code is not included.
+
