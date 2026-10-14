@@ -3,11 +3,12 @@
 Ressup-EQ is created by **Francesco Valla** and published under the
 **Valla Productions** manufacturer name.
 
-The original Ressup-EQ code and documentation are licensed under the MIT
-License in `LICENSE`. Copyright (c) 2026 Francesco Valla.
-The repository contains compiled plug-ins and licensing documents only.
+The original Ressup-EQ software and documentation are proprietary and subject
+to the license in `LICENSE`. Copyright (c) 2026 Francesco Valla.
+All Rights Reserved. The repository contains compiled plug-ins, an interface
+screenshot and documentation; source code is not included.
 
-The MIT license for original code does not replace the licenses of the
+The proprietary license for original software does not replace the licenses of the
 third-party components included in the compiled plug-ins.
 
 ## JUCE Framework 9.0.3
@@ -15,7 +16,7 @@ third-party components included in the compiled plug-ins.
 Copyright (c) Raw Material Software Limited.
 These builds use the commercial JUCE licence (JUCE Starter, as confirmed
 by the product author). The framework is separately dual-licensed under
-the commercial JUCE licence or AGPLv3; it is not relicensed under MIT.
+the commercial JUCE licence or AGPLv3. JUCE remains subject to its own licence.
 
 The upstream framework notice is preserved in `licenses/JUCE-LICENSE.md`.
 Notices for bundled third-party libraries are preserved in

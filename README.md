@@ -8,7 +8,7 @@ control ringing synths, tighten a bass part or bring balance to a bus.
 
 ![Ressup-EQ interface with spectrum analysis, EQ curves and the selected band's controls](images/ressup-eq.png)
 
-**Version 1.16.1** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3
+**Version 1.16.2** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3
 
 ## Three ways to shape your sound
 
@@ -75,9 +75,9 @@ version, then reopen it and rescan plug-ins if needed.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](Ressup-EQ-1.16.1-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](Ressup-EQ-1.16.1-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](Ressup-EQ-1.16.1-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Mac VST3](Ressup-EQ-1.16.2-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](Ressup-EQ-1.16.2-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](Ressup-EQ-1.16.2-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
 
 The Mac VST3 and AU have been validated on macOS. The Windows build has
 **not yet been tested in a Windows DAW**. Mac downloads are not Apple notarized.
@@ -86,8 +86,10 @@ File checksums are available in [SHA256SUMS.txt](SHA256SUMS.txt).
 ## Credits and license
 
 Created by **Francesco Valla** · **Valla Productions**.
-Original Ressup-EQ code and documentation: [MIT License](LICENSE),
-© 2026 Francesco Valla. Third-party components retain their own licenses;
+Original Ressup-EQ software and documentation are [proprietary](LICENSE).
+© 2026 Francesco Valla. All Rights Reserved. Use requires express authorization
+under this license or a separate written agreement. Third-party components
+retain their own licenses;
 see [Third-Party Notices](THIRD_PARTY_NOTICES.md).
 
 
