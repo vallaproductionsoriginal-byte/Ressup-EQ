@@ -30,6 +30,13 @@ The complete license is preserved in `licenses/VST3-SDK-LICENSE.txt`.
 The Audio Unit build uses Steinberg's VST3-to-AU wrapper and embeds the
 same VST3 audio engine as the standalone VST3 plug-in.
 
+## CLAP SDK (Linux CLAP build)
+
+MIT License. Copyright (c) 2021 Alexandre BIQUE.
+SDK revision: `a47f6badb49d948fd009998f28309cdab78979c9`, headers 1.2.10.
+The complete license is preserved in `licenses/CLAP-SDK-LICENSE.txt`.
+The native Linux CLAP build does not link the Steinberg or Apple SDKs.
+
 ## Apple AudioUnitSDK (Audio Unit build)
 
 Copyright (c) Apple Inc. and the AudioUnitSDK project authors.
@@ -43,5 +50,6 @@ The Windows x64 build uses the release Microsoft Visual C++ runtime and
 Windows SDK import libraries. Windows system DLLs are supplied by Windows;
 SDK headers, development libraries and build tools are not distributed.
 
-The plug-in bundles include their applicable license documents in
-`Contents/Resources/licenses`. Copies are also provided beside the archives.
+The macOS and Windows plug-in bundles include their applicable license
+documents in `Contents/Resources/licenses`. The Linux CLAP archive includes
+them in its `licenses/` directory. Copies are also provided beside the archives.

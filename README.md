@@ -8,7 +8,7 @@ control ringing synths, tighten a bass part or bring balance to a bus.
 
 ![Ressup-EQ interface with spectrum analysis, a single combined EQ response and the selected band's controls](images/ressup-eq.png)
 
-**Version 1.17.3** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3
+**Version 1.17.3** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
 ## New in 1.17.3
 
@@ -16,6 +16,9 @@ The EQ display now shows one combined response with editable band nodes.
 Changing Input or Output level no longer shifts the curve up or down: it
 stays aligned with the EQ settings, including live Dynamics and Res Sup corrections.
 See the full [changelog](CHANGELOG.md).
+
+Now also available for **Linux x86-64 as CLAP**, with the full graphical editor.
+The Linux package is version **1.17.3-clap.1** and is included in the same release.
 
 ## Three ways to shape your sound
 
@@ -92,8 +95,9 @@ higher Detail.
 
 **[Download Ressup-EQ 1.17.3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.17.3)** — includes the single combined EQ curve, independent of Input and Output level trims.
 
-Choose the ZIP for your system, extract it and copy the entire plug-in bundle
-to the matching folder below. Close your DAW before replacing an existing
+Choose the ZIP for your system and extract it. Copy the entire plug-in bundle
+(macOS/Windows) or the single `Ressup-EQ.clap` file (Linux) to the matching
+folder below. Close your DAW before replacing an existing
 version, then reopen it and rescan plug-ins if needed.
 
 | Download | Requirements | Installation folder |
@@ -101,10 +105,24 @@ version, then reopen it and rescan plug-ins if needed.
 | [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.3/Ressup-EQ-1.17.3-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
 | [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.3/Ressup-EQ-1.17.3-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
 | [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.3/Ressup-EQ-1.17.3-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.3/Ressup-EQ-1.17.3-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+
+On Linux, create `~/.clap/` if needed and use a DAW with CLAP support. The
+editor uses X11; on Wayland, the DAW must host it through X11/XWayland.
+Standard desktop libraries (fontconfig, FreeType and X11) are required.
+Installation does not require Wine or developer SDKs. This package is for
+x86-64; it does not include an ARM64 binary or native Wayland embedding.
 
 The Mac VST3 and AU have been validated on macOS. The Windows build has
 **not yet been tested in a Windows DAW**. Mac downloads are not Apple notarized.
 File checksums are available in [SHA256SUMS.txt](SHA256SUMS.txt).
+
+The Linux CLAP passes 30 audio integration checks, 13 graphical checks and
+all 35 applicable checks in the CLAP validator. It has also been loaded in
+REAPER 7.82 for Linux, with its custom editor open and an audio render checked
+against the expected gain. These checks ran in an Ubuntu 22.04 x86-64
+userspace under Rosetta in an isolated Linux VM on Apple Silicon. The archive
+includes the verification manifest, installation instructions and licenses.
 
 ## Credits and license
 

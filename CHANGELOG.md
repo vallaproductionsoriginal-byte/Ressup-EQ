@@ -12,6 +12,12 @@
 - Available for macOS Apple Silicon as VST3 and self-contained Audio Unit v2,
   and for Windows x64 as VST3. Plug-in identities, parameter IDs and saved
   settings remain compatible.
+- Added the Linux x86-64 CLAP package, version 1.17.3-clap.1, with the full
+  graphical editor, automation, sidechain and shared audio engine. Requires
+  glibc 2.35+ (Ubuntu 22.04+) and X11/XWayland hosting.
+- The Linux CLAP passes audio, graphical and official CLAP validator checks,
+  and a REAPER 7.82 Linux load/editor/render test in an Ubuntu 22.04 x86-64
+  userspace under Rosetta. The archive includes a verification manifest.
 
 ## 1.17.2 — 2026-10-15
 

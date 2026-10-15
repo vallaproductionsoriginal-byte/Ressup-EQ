@@ -8,11 +8,13 @@
 !Ressup-EQ-1.17.3-macOS-AppleSilicon-VST3.zip
 !Ressup-EQ-1.17.3-macOS-AppleSilicon-AU.zip
 !Ressup-EQ-1.17.3-Windows-x64-VST3.zip
+!Ressup-EQ-1.17.3-clap.1-Linux-x86_64-CLAP.zip
 !licenses/
 !licenses/AudioUnitSDK-LICENSE.txt
 !licenses/JUCE-LICENSE.md
 !licenses/JUCE-THIRD-PARTY-LICENSES.txt
 !licenses/JUCE.spdx.json
 !licenses/VST3-SDK-LICENSE.txt
+!licenses/CLAP-SDK-LICENSE.txt
 !images/
 !images/ressup-eq.png
