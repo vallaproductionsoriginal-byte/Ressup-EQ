@@ -12,9 +12,9 @@ Made by **Francesco Valla · Valla Productions**.
 
 ![Ressup-EQ with its combined EQ curve, spectrum analyzer, and Dynamics and Res Sup active on the selected band](images/ressup-eq.png)
 
-**Version 1.18.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.20.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-**[Download Ressup-EQ 1.18.0](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.18.0)**
+**[Download Ressup-EQ 1.20.0](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.20.0)**
 
 ## Start with what you hear
 
@@ -156,13 +156,18 @@ Higher settings use more CPU and can add latency. The **Resolution** setting
 in the gear menu changes the analyzer picture. Choose each according to what
 you need to hear and see.
 
-## What's new in 1.18.0
+## What's new in 1.20.0
 
-- Compact **Loudness Match and Bypass icons**, plus an analyzer settings gear.
-- Selectable analyzer resolution, minimum level and display speed.
-- **Dynamics and Res Sup together on one band**, with independent Threshold
-  and Density settings for each stage.
-- **Res Sup Q extended to 0.01x–4x**. Older projects retain their actual Q values.
+- **Frequency competition:** compare your Post spectrum with external sidechain
+  or another live Ressup-EQ instance. Vertical regions show overlapping frequencies.
+- **Instances browser:** Sidechain first, Main second, then the other instances,
+  with live spectra and applied EQ previews.
+- **Editable reference EQ:** enable Compare, choose another instance and edit
+  its brick-coloured curve directly. Drag nodes for frequency/gain, use the wheel
+  for Q, or use the band panel. Add and delete bands in the selected instance.
+- Switch **Main / Reference** above the band panel to choose which EQ to edit.
+  All participating instances need **1.20.0**. Source selection and names last
+  while the instance is loaded; choose the reference again after reopening a project.
 
 See the full [changelog](CHANGELOG.md).
 
@@ -176,10 +181,10 @@ separate VST3 installation.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.18.0/Ressup-EQ-1.18.0-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.18.0/Ressup-EQ-1.18.0-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.18.0/Ressup-EQ-1.18.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
-| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.18.0/Ressup-EQ-1.18.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.0/Ressup-EQ-1.20.0-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.0/Ressup-EQ-1.20.0-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.0/Ressup-EQ-1.20.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.0/Ressup-EQ-1.20.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
 On Linux, create `~/.clap/` if needed and use a DAW with CLAP support.
 Standard fontconfig, FreeType and X11 desktop libraries are required; on

@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.20.0 — 2026-10-16
+
+- Instances now orders External sidechain, Main, then other live instances.
+- Selecting a reference with Compare enabled exposes its EQ as a solid
+  brick-coloured curve with editable band nodes and a routed parameter panel.
+- Drag frequency/gain, wheel Q, add/delete bands and edit band settings directly
+  in the reference instance. Main / Reference or a node click retargets editing.
+- Remote values reach the target's audio owner through a lock-free queue and
+  persist in its state. VST3 reports changes through output parameter queues;
+  CLAP sends balanced gesture/value events, including inactive host flushes.
+- Switching targets, disabling Compare or losing the reference finishes pending
+  gestures and restores local editing. Reference previews update during a drag.
+- Updated exchange protocol; all participating instances need 1.20.0.
+
+## 1.19.0 — 2026-10-16
+
+- Added a Compare icon and Instances button beside Valla Productions.
+- Competing frequencies appear as orange vertical regions; width follows the
+  overlapping frequency range and strength increases their width and opacity.
+- Compare the local Post signal with external sidechain or another instance's
+  Post signal. The reference spectrum and dashed applied EQ response are shown.
+- A scrollable Instances window previews live spectra and applied EQ curves,
+  including Dynamics, Res Sup, mix, routing and bypass. Instances can be named.
+- Per-user, versioned shared memory exchanges spectra across plug-in formats
+  and host processes, including instances whose editors are closed. A background
+  worker performs FFT and exchange; audio uses only a lock-free FIFO and atomics.
+- Closed instances are removed; stopped audio clears its spectrum, and crashed
+  publishers expire. Unavailable references never switch to sidechain silently.
+- Comparison enable uses the existing Trace Clash parameter and is saved by
+  the host. Names and source choices persist while the engine is loaded.
+
 ## 1.18.0 — 2026-10-16
 
 - Replaced LU MATCH and BYPASS text buttons with icons and added a settings gear.
