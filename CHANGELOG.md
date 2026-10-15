@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.17.3 — 2026-10-15
+
+- The EQ display now shows a single combined response. Removed the individual
+  band curves and the selected band's Res Sup preview envelope; band nodes
+  remain editable. Live Dynamics and Res Sup corrections remain visible in
+  the combined response.
+- Input and Output level trims no longer shift the EQ curve up or down.
+  The display represents the EQ and Mix settings independently of both trims.
+- Updated Input and Output tooltips, README and interface screenshot.
+- Available for macOS Apple Silicon as VST3 and self-contained Audio Unit v2,
+  and for Windows x64 as VST3. Plug-in identities, parameter IDs and saved
+  settings remain compatible.
+
 ## 1.17.2 — 2026-10-15
 
 Changes since the previous published release, 1.16.2. This release includes

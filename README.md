@@ -6,14 +6,15 @@ Ressup-EQ by **Valla Productions** brings a 24-band equalizer, dynamic EQ and
 resonance suppression into one visual workspace. Use it to smooth a sharp vocal,
 control ringing synths, tighten a bass part or bring balance to a bus.
 
-![Ressup-EQ interface with spectrum analysis, EQ curves and the selected band's controls](images/ressup-eq.png)
+![Ressup-EQ interface with spectrum analysis, a single combined EQ response and the selected band's controls](images/ressup-eq.png)
 
-**Version 1.17.2** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3
+**Version 1.17.3** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3
 
-## New in 1.17.2
+## New in 1.17.3
 
-Signed Density now works in Dynamics as well as Res Sup. The header is more
-compact, Mix sits before Input, and cursor frequencies appear above the spectrum.
+The EQ display now shows one combined response with editable band nodes.
+Changing Input or Output level no longer shifts the curve up or down: it
+stays aligned with the EQ settings, including live Dynamics and Res Sup corrections.
 See the full [changelog](CHANGELOG.md).
 
 ## Three ways to shape your sound
@@ -66,6 +67,11 @@ Density the same limits apply to boosts.
 resonances. Use Attack and Release to match the movement to the performance,
 or leave Auto timing enabled.
 
+**A stable EQ reference.** One curve shows the combined EQ and Mix response,
+including live Dynamics and Res Sup corrections. Input and Output trims
+change the audio level without shifting this curve. Drag the band nodes to
+change the EQ settings.
+
 **See what you are hearing.** Pre and Post compare the input and output
 spectra; Side shows the stereo difference signal. Freeze remembers Post peaks
 while the analyzer stays live. Hover near a peak and click to add a band there.
@@ -84,7 +90,7 @@ higher Detail.
 
 ## Download and install
 
-**[Download Ressup-EQ 1.17.2](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.17.2)** — includes signed Dynamics Density and the compact spectrum interface.
+**[Download Ressup-EQ 1.17.3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.17.3)** — includes the single combined EQ curve, independent of Input and Output level trims.
 
 Choose the ZIP for your system, extract it and copy the entire plug-in bundle
 to the matching folder below. Close your DAW before replacing an existing
@@ -92,9 +98,9 @@ version, then reopen it and rescan plug-ins if needed.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.2/Ressup-EQ-1.17.2-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.2/Ressup-EQ-1.17.2-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.2/Ressup-EQ-1.17.2-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.3/Ressup-EQ-1.17.3-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.3/Ressup-EQ-1.17.3-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.3/Ressup-EQ-1.17.3-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
 
 The Mac VST3 and AU have been validated on macOS. The Windows build has
 **not yet been tested in a Windows DAW**. Mac downloads are not Apple notarized.
