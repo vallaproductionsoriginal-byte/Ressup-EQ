@@ -8,17 +8,19 @@ control ringing synths, tighten a bass part or bring balance to a bus.
 
 ![Ressup-EQ interface with spectrum analysis, a single combined EQ response and the selected band's controls](images/ressup-eq.png)
 
-**Version 1.17.3** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.17.4** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-## New in 1.17.3
+## New in 1.17.4
 
-The EQ display now shows one combined response with editable band nodes.
-Changing Input or Output level no longer shifts the curve up or down: it
-stays aligned with the EQ settings, including live Dynamics and Res Sup corrections.
+The spectrum always shows the full **0 to -120 dBFS** range, with labels every
+20 dB. A **16384-sample FFT** and smooth curves reveal finer frequency detail
+while preserving narrow resonances. The header depth menu has been removed;
+the EQ gain axis always shows **±30 dB**. The combined EQ response remains
+independent of Input and Output level trims.
 See the full [changelog](CHANGELOG.md).
 
 Now also available for **Linux x86-64 as CLAP**, with the full graphical editor.
-The Linux package is version **1.17.3-clap.1** and is included in the same release.
+The Linux package is version **1.17.4-clap.1** and is included in the same release.
 
 ## Three ways to shape your sound
 
@@ -79,10 +81,9 @@ change the EQ settings.
 spectra; Side shows the stereo difference signal. Freeze remembers Post peaks
 while the analyzer stays live. Hover near a peak and click to add a band there.
 Cursor and Freeze peak frequencies appear at the top of the analyzer, clear of
-the parameter panel. Mix sits between the dB selector and Input in the compact
-header, leaving more vertical space for the spectrum. Use Solo to audition
-a band's contribution. Choose the **±30 dB** display scale
-when you want to see cuts deeper than the default ±12 dB view.
+the parameter panel. Mix sits between Freeze and Input in the compact header.
+The spectrum uses a fixed **0 to -120 dBFS** scale and the EQ gain axis always
+shows **±30 dB**, with no depth selector. Use Solo to audition a band's contribution.
 
 **Choose phase and detail for the session.** Zero latency keeps playback
 responsive when recording or playing instruments. Natural is an oversampled
@@ -93,7 +94,7 @@ higher Detail.
 
 ## Download and install
 
-**[Download Ressup-EQ 1.17.3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.17.3)** — includes the single combined EQ curve, independent of Input and Output level trims.
+**[Download Ressup-EQ 1.17.4](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.17.4)** — includes the full 0 to -120 dBFS spectrum and finer, smoother analysis on all four builds.
 
 Choose the ZIP for your system and extract it. Copy the entire plug-in bundle
 (macOS/Windows) or the single `Ressup-EQ.clap` file (Linux) to the matching
@@ -102,10 +103,10 @@ version, then reopen it and rescan plug-ins if needed.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.3/Ressup-EQ-1.17.3-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.3/Ressup-EQ-1.17.3-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.3/Ressup-EQ-1.17.3-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
-| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.3/Ressup-EQ-1.17.3-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.4/Ressup-EQ-1.17.4-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.4/Ressup-EQ-1.17.4-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.4/Ressup-EQ-1.17.4-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.4/Ressup-EQ-1.17.4-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
 On Linux, create `~/.clap/` if needed and use a DAW with CLAP support. The
 editor uses X11; on Wayland, the DAW must host it through X11/XWayland.

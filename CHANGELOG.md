@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.17.4 — 2026-10-15
+
+- The spectrum uses a fixed 0 to -120 dBFS scale, including saved sessions,
+  with labels every 20 dB on the right axis.
+- Removed the header depth selector. The EQ gain axis always shows the full
+  +/-30 dB band gain range.
+- Increased the display FFT from 4096 to 16384 samples for finer frequency
+  detail. Shape-preserving cubic curves smooth both live and Freeze traces
+  while retaining narrow peaks between pixels.
+- Available as macOS Apple Silicon VST3 and self-contained Audio Unit v2,
+  Windows x64 VST3, and Linux x86-64 CLAP with the custom editor.
+
 ## 1.17.3 — 2026-10-15
 
 - The EQ display now shows a single combined response. Removed the individual
