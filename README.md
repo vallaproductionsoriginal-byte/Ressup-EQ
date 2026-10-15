@@ -1,20 +1,81 @@
 # Ressup-EQ
 
-**Shape the tone. Control what jumps out. Keep the track moving.**
+**Hear where tracks compete. Make room for both.**
 
-A vocal gets sharp on the louder phrases. A bass note fills the room more than
-the others. A synth sounds great, but a few ringing frequencies keep taking over.
-Ressup-EQ gives you three ways to work on those moments: shape the tone with EQ,
-control frequency build-ups with Dynamics, and work on resonant peaks with
-Res Sup. Use whichever combination the track needs, across up to **24 bands**.
+Kick and bass fill the same low end. A vocal gets buried when the guitars come
+in. A synth turns sharp as the filter opens. Ressup-EQ helps you shape the tone,
+control the moments that jump out, and see how two tracks fit together.
+
+Use **EQ**, **Dynamics** and **Res Sup** across up to **24 bands**. With **1.20.0**,
+bring another track into the analyzer, see where their frequencies overlap,
+and adjust either instance's EQ from the same window while listening to the mix.
 
 Made by **Francesco Valla · Valla Productions**.
-
-![Ressup-EQ 1.20.0 showing frequency competition, the brick-coloured reference EQ curve and editable reference band controls](images/ressup-eq.png)
 
 **Version 1.20.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
 **[Download Ressup-EQ 1.20.0](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.20.0)**
+
+![Ressup-EQ 1.20.0 showing frequency competition, the brick-coloured reference EQ curve and editable reference band controls](images/ressup-eq-1.20.0-reference-editing.png)
+
+*Green: the current track's EQ. Brick: the selected reference. Vertical highlights:
+frequencies where the two signals overlap.*
+
+## Make room for kick and bass from one window
+
+1. **Put Ressup-EQ on both tracks and play the section together.** Open the
+   bass instance, for example, with the kick running through its own instance.
+2. **Click Instances at the bottom, beside Valla Productions.** The browser
+   shows **External sidechain** first, **Main** (the instance you opened) next,
+   then the other live instances. Each has a spectrum and applied EQ preview.
+   Give instances track names so the kick, bass and other parts are easy to find.
+3. **Select the kick and enable the Compare icon, just left of Instances.**
+   Its spectrum overlays the bass spectrum. Vertical highlights grow
+   wider and stronger where the two signals compete for the same frequencies.
+4. **Choose which track should own that area.** Listen for the kick's weight
+   and the bass's body. The highlights give you a place to investigate;
+   overlapping energy can also be exactly what the arrangement needs.
+5. **Shape either EQ without opening another window.** The bass EQ stays
+   green; the kick's reference EQ is brick-coloured. Use **Main / Reference**
+   above the band panel, or click a band node, to choose which instance to edit.
+   Drag for frequency and gain, wheel for Q, or use the band controls. Add and
+   delete bands in the selected instance as needed.
+
+**Editing Reference changes that track's actual EQ and sound.** Those changes
+are saved with the target instance, even when its editor is closed. Switching
+back to Main lets you continue shaping the track whose window you opened.
+Turning Compare off also returns editing to Main.
+
+The competition display helps you decide where to work. It does not apply
+cuts or duck another track automatically.
+
+## Try the comparison on the rest of the mix
+
+| Tracks | Listen for | Try |
+| --- | --- | --- |
+| **Kick + bass** | A low end that gets heavy or loses definition when both play | Keep the weight of one part and gently shape the other around it. |
+| **Lead vocal + guitars or pads** | Words getting buried when the arrangement fills out | Compare the presence area, then adjust the backing part's reference EQ while the vocal plays. |
+| **Synth layers** | A harsh or crowded region that appears when layers combine | Decide which layer needs that character, then shape the other. |
+| **Backing vocals + lead** | Extra thickness that starts hiding the lead | Compare their low mids and presence before choosing where to make room. |
+
+For a build-up that happens only on louder moments, try **Dynamics** in the
+band you have chosen. For ringing peaks inside that area, try **Res Sup**.
+You can use both on the same band, with Dynamics processing first.
+
+## Compare a sidechain signal
+
+To compare against audio that does not have its own Ressup-EQ instance, route
+that track into the plug-in's **external sidechain input in your DAW**. Choose
+**External sidechain** at the top of Instances, then enable Compare.
+
+The analyzer compares the current track's processed **Post** signal with that
+sidechain signal. When another Ressup-EQ instance is selected instead, it
+compares the two instances' Post signals.
+
+A sidechain source provides audio for the comparison. To edit another track's
+EQ from this window, select that track's **Ressup-EQ instance** as the reference.
+To have incoming sidechain audio trigger a band's Dynamics or Res Sup, enable
+that band's **External SC** control in Details as well.
 
 ## Start with what you hear
 
@@ -133,7 +194,7 @@ corrections. The EQ gain axis stays at **±30 dB**. Input and Output trims
 change your listening level without moving that curve away from the band's
 settings.
 
-## Keep your comparisons useful
+## Judge changes at a similar level
 
 Use **Input** and **Output** to manage levels and **Mix** to blend the
 processed signal with the original for parallel treatment.
@@ -156,20 +217,18 @@ Higher settings use more CPU and can add latency. The **Resolution** setting
 in the gear menu changes the analyzer picture. Choose each according to what
 you need to hear and see.
 
-## What's new in 1.20.0
+## Bring an existing session up to 1.20.0
 
-- **Frequency competition:** compare your Post spectrum with external sidechain
-  or another live Ressup-EQ instance. Vertical regions show overlapping frequencies.
-- **Instances browser:** Sidechain first, Main second, then the other instances,
-  with live spectra and applied EQ previews.
-- **Editable reference EQ:** enable Compare, choose another instance and edit
-  its brick-coloured curve directly. Drag nodes for frequency/gain, use the wheel
-  for Q, or use the band panel. Add and delete bands in the selected instance.
-- Switch **Main / Reference** above the band panel to choose which EQ to edit.
-  All participating instances need **1.20.0**. Source selection and names last
-  while the instance is loaded; choose the reference again after reopening a project.
+Update **all instances you want to compare to 1.20.0**. Your existing EQ and
+processing settings remain compatible. The Instances browser can also show
+live instances in another open DAW project, so track names help you choose.
 
-See the full [changelog](CHANGELOG.md).
+Compare on/off is saved with the session. Instance names and the chosen source
+last while the plug-in is loaded; **select your reference again after reopening
+a project**. If the reference closes, its highlights clear and editing returns
+to Main.
+
+See the [changelog](CHANGELOG.md) for the release history.
 
 ## Download and install
 
