@@ -1,115 +1,178 @@
 # Ressup-EQ
 
-**Shape your tone. Tame resonances. Stay focused on the music.**
+**Shape the tone. Control what jumps out. Keep the track moving.**
 
-Ressup-EQ by **Valla Productions** brings a 24-band equalizer, dynamic EQ and
-resonance suppression into one visual workspace. Use it to smooth a sharp vocal,
-control ringing synths, tighten a bass part or bring balance to a bus.
+A vocal gets sharp on the louder phrases. A bass note fills the room more than
+the others. A synth sounds great, but a few ringing frequencies keep taking over.
+Ressup-EQ gives you three ways to work on those moments: shape the tone with EQ,
+control frequency build-ups with Dynamics, and work on resonant peaks with
+Res Sup. Use whichever combination the track needs, across up to **24 bands**.
 
-![Ressup-EQ interface with spectrum analysis, a single combined EQ response and the selected band's controls](images/ressup-eq.png)
+Made by **Francesco Valla · Valla Productions**.
+
+![Ressup-EQ with its combined EQ curve, spectrum analyzer, and Dynamics and Res Sup active on the selected band](images/ressup-eq.png)
 
 **Version 1.18.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-## New in 1.18.0
+**[Download Ressup-EQ 1.18.0](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.18.0)**
 
-**Analyzer settings in one place.** Compact Loudness Match and Bypass icons make
-room for a gear menu. Select an FFT resolution from **1024 to 65536 (64k)**
-samples, a minimum level from **0 to 120 dB below 0 dBFS** (default **100**),
-and one of five display speeds, from Very Slow to Very Fast. Slower speeds
-smooth both the rise and fall of the spectrum. Click outside the menu to close it.
-The default FFT remains 16384 samples; display resolution adds no audio latency.
+## Start with what you hear
 
-**Dynamics → Res Sup on the same band.** Enable either stage independently or
-both together. Dynamics processes first, followed by Res Sup. When both are
-active, the **Edit: Dynamics / Edit: Res Sup** selector chooses which stage's
-independent Threshold and Density to edit. Range and timing are shared.
+| What the track needs | Reach for | Try it on |
+| --- | --- | --- |
+| A lasting change in tone | **EQ** | Low-mid cleanup, bass weight, vocal presence or a brighter top end |
+| Control when a frequency gets too loud | **Dynamics** | Boomy bass notes, louder vocal phrases or a synth that gets harsh as it opens up |
+| Control over individual resonant peaks | **Res Sup** | Ringing vocals, sustained synths or narrow peaks inside a busy sound |
 
-**Wider Res Sup Q range.** Set Res Sup Q from **0.01x to 4x**. Older projects
-retain their actual Q values when loaded. Plug-in identities and all 573
-parameter IDs are retained.
+Each band has its own frequency, gain, Q and channel selection. Choose bells,
+shelves, low/high cuts, notches, band-pass, tilt shelves, flat tilt or all-pass
+shapes. For cuts, slope choices include gentle **6 dB/oct**, steeper options and
+**Brickwall**. Use Solo to hear a band's contribution while finding the area.
 
-The release includes all four builds below, including **Linux x86-64 CLAP
-1.18.0-clap.1** with the custom editor. See the full [changelog](CHANGELOG.md).
+## Get a band working in a few moves
 
-## Three ways to shape your sound
+1. **Find the area.** Double-click the spectrum to add a band. Drag the point
+   to set frequency and gain; use the wheel over it to adjust Q.
+2. **Choose how it reacts.** Leave it as regular EQ, enable Dynamics, enable
+   Res Sup, or turn both on.
+3. **Set the direction.** Negative Density cuts; positive Density boosts.
+   Res Sup starts at **0%**, so move Density below zero to hear suppression.
+   Dynamics starts at **−100%**, ready to attenuate above its threshold.
+4. **Set a useful limit.** Open the Details drawer and choose a modest Range,
+   such as **−6 dB**. Raise Threshold while listening, then adjust Density
+   until the band does enough for the mix.
+5. **Compare at a similar level.** Use the Loudness Match icon beside Output,
+   then the power-shaped Bypass icon to compare the processed and original signal.
 
-- **EQ:** make a lasting tonal change. Add weight, clear some low mids or shape
-  the top end with up to 24 bands.
-- **Dynamics:** let a band react to the input level. Useful when a frequency
-  builds up only on louder notes or phrases. Attack and Release shape how
-  quickly the cut or boost engages and recovers. Negative Density cuts; positive
-  Density boosts; 0% is neutral. Dynamics starts at -100% to preserve existing sessions.
-- **Res Sup:** follow several resonant peaks within the area you select. Use
-  negative Density to reduce ringing and harshness, or positive Density to
-  bring out resonant character. Density starts at **0%**; move it below zero
-  to hear suppression.
+Hold **Shift** for finer dragging and wheel moves. Type directly into numeric
+fields, including frequencies in kHz. Double-click a control to reset it.
+Select a band and use **Delete / Backspace** or the bin icon to remove it.
+The lower arrow folds the parameter panel when you want more room to look
+at the spectrum.
 
-Use the band's mode buttons to enable Dynamics, Res Sup, or both in sequence.
-You can still adjust its regular EQ gain while the adaptive stages work.
+## Let Dynamics and Res Sup work together
 
-## Get started in a few moves
+You can now enable both on the **same band**, with this routing:
 
-1. **Find the area.** Double-click the spectrum to add a band. Drag its point
-   to adjust frequency and gain; use the mouse wheel to change Q.
-2. **Choose the response.** Use EQ for tone shaping, Dynamics for level-dependent
-   control or Res Sup to work on resonant peaks inside the band.
-3. **Dial in the amount.** Choose a negative Density to cut or a positive Density
-   to boost in Dynamics or Res Sup. Set a modest Range in the Details drawer,
-   then raise Threshold while listening.
-4. **Compare by ear.** Turn on **LU MATCH** beside Output to bring the output
-   toward the input's momentary loudness, then use Bypass to compare.
+**Dynamics → Res Sup**
 
-Click any band point to select it; use the lower panel’s arrow to show or hide
-its controls. Hold **Shift** for finer edits; double-click a control to restore
-its default.
+On a vocal, for example, use Dynamics to contain an upper-mid build-up on
+louder words, then let Res Sup work on the resonant peaks within that area.
+The internal Res Sup detector accounts for the level change made by Dynamics.
+You can also use either stage on its own.
 
-## Make the controls work for your mix
+When both are active, click **Edit: Dynamics / Edit: Res Sup** above the
+parameter panel to choose which stage's **Threshold and Density** you are
+adjusting. Each stage remembers its own values. **Range, Attack, Release and
+Auto timing are shared** within the band.
 
-**Range and Threshold work together.** Range sets the maximum available cut
-or boost at 100% Threshold and full Density. At full negative Density,
-Range **−30 dB** and Threshold
-**50%** allow up to **15 dB** of reduction; at **100%**, up to **30 dB**.
-Raising Threshold also makes quieter peaks eligible for processing. Actual
-reduction depends on the signal and the band's sensitivity. New bands start
-with Range at **−32 dB**.
+Your regular EQ gain stays available for setting the overall tone alongside
+the adaptive processing.
 
-Dynamics and Res Sup store their Density settings independently. At positive
-Density the same limits apply to boosts.
+## Get the amount and movement right
 
-**Q decides where to focus.** The main Q steers the area covered by the band.
-**Res Sup Q** (0.01x–4x) separately widens or narrows the corrections around individual
-resonances. Use Attack and Release to match the movement to the performance,
-or leave Auto timing enabled.
+**Range sets the available depth.** It runs from **0 to −72 dB**, with new
+bands starting at **−32 dB**. For a first pass, bring it closer to zero and
+increase the available depth as you listen.
 
-**A stable EQ reference.** One curve shows the combined EQ and Mix response,
-including live Dynamics and Res Sup corrections. Input and Output trims
-change the audio level without shifting this curve. Drag the band nodes to
-change the EQ settings.
+**Threshold sets when and how much.** Higher Threshold percentages
+let quieter material trigger the processing and increase the available action.
+At full negative Density, **Range −6 dB + Threshold 50%** allows up to **3 dB
+of cut**. The amount you actually hear depends on the signal and the band's
+sensitivity. Positive Density applies the same limit to boosts.
 
-**See what you are hearing.** Pre and Post compare the input and output
-spectra; Side shows the stereo difference signal. Freeze remembers Post peaks
-while the analyzer stays live. Hover near a peak and click to add a band there.
-Cursor and Freeze peak frequencies appear at the top of the analyzer, clear of
-the parameter panel. Mix sits between Freeze and Input in the compact header.
-The gear menu controls the spectrum's resolution, minimum level and speed.
-The default analyzer scale is **0 to -100 dBFS** and the EQ gain axis always
-shows **±30 dB**. Use Solo to audition a band's contribution.
+**Density decides the direction and strength.** Both stages run from **−100%
+to +100%**: negative values attenuate, zero is neutral, and positive values
+boost. Use negative Res Sup Density to tame resonances; try positive values
+when you want to bring out resonant character.
 
-**Choose phase and detail for the session.** Zero latency keeps playback
-responsive when recording or playing instruments. Natural is an oversampled
-alternative; Linear offers linear-phase EQ with added delay. Detail starts
-at **0**. Higher settings improve frequency resolution and use more CPU;
-they can also add latency. Very narrow corrections in Linear mode may need
-higher Detail.
+**Attack and Release set the movement.** Attack controls how quickly the
+correction engages; Release controls how it returns. Leave **Auto timing**
+on as a starting point, or adjust either control to switch to manual timing.
+
+**Main Q and Res Sup Q do different jobs.** Main Q focuses the band and its
+sensitivity around the chosen frequency. **Res Sup Q** sets the width of the
+individual adaptive corrections: lower values make them broader, higher values
+make them narrower. The range is **0.01x–4x**, with **1x** as the default.
+
+## Choose what the band listens to and where it works
+
+Set a band to **Stereo, Left, Right, Mid or Side**. For example, choose Mid
+to work on the centre of a stereo sound, or Side to address the wider part
+of a synth or bus.
+
+In the Details drawer, **External SC** lets another signal trigger the band's
+adaptive processing. Route that signal to the plug-in's side-chain input in
+your DAW, then enable External SC. **SC filter**, **SC Low** and **SC High**
+focus the detector on a frequency range. These controls shape what the
+detector listens to.
+
+## Use the analyzer to support your ears
+
+**Pre and Post** show the input and output spectra. **Side** shows the stereo
+difference signal, useful for seeing what's happening away from the centre.
+The Side trace and the external side-chain input are separate controls.
+
+**Freeze** remembers the highest Post peaks while the live analyzer keeps
+moving. Hover near a remembered peak to read its frequency; click to add a
+neutral band there. Turning Freeze off clears the memory.
+
+Open the **gear icon** in the header to adjust the view:
+
+| Setting | Use it for |
+| --- | --- |
+| **Resolution: 1024–65536 samples (64k)** | Raise it to distinguish closely spaced frequencies, especially in the low end. Default: **16384**. |
+| **Minimum: 0–120 dB below 0 dBFS** | Choose how far down the spectrum you can see. The default value **100** shows **0 to −100 dBFS**. |
+| **Speed: Very Slow → Very Fast** | Slow the rise and fall for an easier trace to read, or speed it up to follow changes more closely. |
+
+Click outside the menu to close it. These are display settings: changing them
+leaves the audio processing and plug-in latency unchanged.
+
+One combined curve shows the EQ and Mix response, including live adaptive
+corrections. The EQ gain axis stays at **±30 dB**. Input and Output trims
+change your listening level without moving that curve away from the band's
+settings.
+
+## Keep your comparisons useful
+
+Use **Input** and **Output** to manage levels and **Mix** to blend the
+processed signal with the original for parallel treatment.
+
+The **Loudness Match** icon adjusts the output toward the input's momentary
+loudness, so you can judge the change with less distraction from a level jump.
+It includes EQ, Mix and trims in the comparison and leaves your manual Output
+setting in place. Use **Bypass** to check the original signal as you work.
+
+## Pick a processing mode for the session
+
+- **Zero latency + Detail 0:** a starting point for recording and playing
+  instruments when you need a responsive signal path.
+- **Natural:** 2× oversampling; compare this mode by ear as you work on the tone.
+- **Linear:** linear-phase processing with added latency. Try higher Detail
+  when very narrow corrections need more frequency precision.
+
+The **Detail 0–5** control at the bottom changes processing precision.
+Higher settings use more CPU and can add latency. The **Resolution** setting
+in the gear menu changes the analyzer picture. Choose each according to what
+you need to hear and see.
+
+## What's new in 1.18.0
+
+- Compact **Loudness Match and Bypass icons**, plus an analyzer settings gear.
+- Selectable analyzer resolution, minimum level and display speed.
+- **Dynamics and Res Sup together on one band**, with independent Threshold
+  and Density settings for each stage.
+- **Res Sup Q extended to 0.01x–4x**. Older projects retain their actual Q values.
+
+See the full [changelog](CHANGELOG.md).
 
 ## Download and install
 
-**[Download Ressup-EQ 1.18.0](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.18.0)** — includes analyzer settings, serial Dynamics → Res Sup and the extended Res Sup Q range on all four builds.
-
-Choose the ZIP for your system and extract it. Copy the entire plug-in bundle
-(macOS/Windows) or the single `Ressup-EQ.clap` file (Linux) to the matching
-folder below. Close your DAW before replacing an existing
-version, then reopen it and rescan plug-ins if needed.
+Choose your format, extract the ZIP and copy the plug-in to the folder below.
+Close your DAW before replacing an existing version, then reopen it and rescan
+plug-ins if needed. Copy the **entire VST3 or AU bundle**; on Linux, copy the
+single **Ressup-EQ.clap** file. The AU includes its engine and works without a
+separate VST3 installation.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
@@ -118,31 +181,25 @@ version, then reopen it and rescan plug-ins if needed.
 | [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.18.0/Ressup-EQ-1.18.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
 | [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.18.0/Ressup-EQ-1.18.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
-On Linux, create `~/.clap/` if needed and use a DAW with CLAP support. The
-editor uses X11; on Wayland, the DAW must host it through X11/XWayland.
-Standard desktop libraries (fontconfig, FreeType and X11) are required.
-Installation does not require Wine or developer SDKs. This package is for
-x86-64; it does not include an ARM64 binary or native Wayland embedding.
+On Linux, create `~/.clap/` if needed and use a DAW with CLAP support.
+Standard fontconfig, FreeType and X11 desktop libraries are required; on
+Wayland, the DAW must host the editor through X11/XWayland. The Linux package
+is for x86-64.
 
-The Mac VST3 and AU pass 324 interface checks, 33 native editor bridge checks,
-702 audio/state checks, the Steinberg VST3 validator and Apple's AU validation. The Windows build has
-**not yet been tested in a Windows DAW**. Mac downloads are not Apple notarized.
-File checksums are available in [SHA256SUMS.txt](SHA256SUMS.txt).
+The Mac plug-ins have passed VST3 and AU validation. Mac downloads are ad-hoc
+signed and are **not Apple notarized**. The Windows x64 build has passed
+binary checks; **testing in a Windows DAW remains pending**. The Linux CLAP
+has passed audio and interface tests, CLAP validation, and loading and audio
+rendering in REAPER. Its ZIP includes the verification details.
 
-The Linux CLAP passes 30 audio integration checks, 13 graphical checks and
-all 35 applicable checks in the CLAP validator. It has also been loaded in
-REAPER 7.82 for Linux, with its custom editor open and an audio render checked
-against the expected gain. These checks ran in an Ubuntu 22.04 x86-64
-userspace under Rosetta in an isolated Linux VM on Apple Silicon. The archive
-includes the verification manifest, installation instructions and licenses.
+Downloads contain compiled plug-ins, installation information and licenses.
+**Project source code is not distributed.** File checksums are available in
+[SHA256SUMS.txt](SHA256SUMS.txt).
 
 ## Credits and license
 
-Created by **Francesco Valla** · **Valla Productions**.
+Created by **Francesco Valla · Valla Productions**.
 Original Ressup-EQ software and documentation are [proprietary](LICENSE).
 © 2026 Francesco Valla. All Rights Reserved. Use requires express authorization
 under this license or a separate written agreement. Third-party components
-retain their own licenses;
-see [Third-Party Notices](THIRD_PARTY_NOTICES.md).
-
-
+retain their own licenses; see [Third-Party Notices](THIRD_PARTY_NOTICES.md).
