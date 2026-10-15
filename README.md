@@ -8,7 +8,13 @@ control ringing synths, tighten a bass part or bring balance to a bus.
 
 ![Ressup-EQ interface with spectrum analysis, EQ curves and the selected band's controls](images/ressup-eq.png)
 
-**Version 1.16.2** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3
+**Version 1.17.2** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3
+
+## New in 1.17.2
+
+Signed Density now works in Dynamics as well as Res Sup. The header is more
+compact, Mix sits before Input, and cursor frequencies appear above the spectrum.
+See the full [changelog](CHANGELOG.md).
 
 ## Three ways to shape your sound
 
@@ -16,7 +22,8 @@ control ringing synths, tighten a bass part or bring balance to a bus.
   the top end with up to 24 bands.
 - **Dynamics:** let a band react to the input level. Useful when a frequency
   builds up only on louder notes or phrases. Attack and Release shape how
-  quickly the cut engages and recovers.
+  quickly the cut or boost engages and recovers. Negative Density cuts; positive
+  Density boosts; 0% is neutral. Dynamics starts at -100% to preserve existing sessions.
 - **Res Sup:** follow several resonant peaks within the area you select. Use
   negative Density to reduce ringing and harshness, or positive Density to
   bring out resonant character. Density starts at **0%**; move it below zero
@@ -31,8 +38,9 @@ still adjust its regular EQ gain while either mode is working.
    to adjust frequency and gain; use the mouse wheel to change Q.
 2. **Choose the response.** Use EQ for tone shaping, Dynamics for level-dependent
    control or Res Sup to work on resonant peaks inside the band.
-3. **Dial in the amount.** In Res Sup, choose a negative Density. Set a modest
-   Range in the Details drawer, then raise Threshold while listening.
+3. **Dial in the amount.** Choose a negative Density to cut or a positive Density
+   to boost in Dynamics or Res Sup. Set a modest Range in the Details drawer,
+   then raise Threshold while listening.
 4. **Compare by ear.** Turn on **LU MATCH** beside Output to bring the output
    toward the input's momentary loudness, then use Bypass to compare.
 
@@ -43,11 +51,15 @@ its default.
 ## Make the controls work for your mix
 
 **Range and Threshold work together.** Range sets the maximum available cut
-at 100% Threshold. At full negative Density, Range **−30 dB** and Threshold
+or boost at 100% Threshold and full Density. At full negative Density,
+Range **−30 dB** and Threshold
 **50%** allow up to **15 dB** of reduction; at **100%**, up to **30 dB**.
 Raising Threshold also makes quieter peaks eligible for processing. Actual
 reduction depends on the signal and the band's sensitivity. New bands start
 with Range at **−32 dB**.
+
+Dynamics and Res Sup store their Density settings independently. At positive
+Density the same limits apply to boosts.
 
 **Q decides where to focus.** The main Q steers the area covered by the band.
 **Res Sup Q** separately widens or narrows the corrections around individual
@@ -57,7 +69,10 @@ or leave Auto timing enabled.
 **See what you are hearing.** Pre and Post compare the input and output
 spectra; Side shows the stereo difference signal. Freeze remembers Post peaks
 while the analyzer stays live. Hover near a peak and click to add a band there.
-Use Solo to audition a band's contribution. Choose the **±30 dB** display scale
+Cursor and Freeze peak frequencies appear at the top of the analyzer, clear of
+the parameter panel. Mix sits between the dB selector and Input in the compact
+header, leaving more vertical space for the spectrum. Use Solo to audition
+a band's contribution. Choose the **±30 dB** display scale
 when you want to see cuts deeper than the default ±12 dB view.
 
 **Choose phase and detail for the session.** Zero latency keeps playback
@@ -69,7 +84,7 @@ higher Detail.
 
 ## Download and install
 
-**[Download Ressup-EQ 1.16.2](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.16.2)** — all three bundles include the updated proprietary license.
+**[Download Ressup-EQ 1.17.2](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.17.2)** — includes signed Dynamics Density and the compact spectrum interface.
 
 Choose the ZIP for your system, extract it and copy the entire plug-in bundle
 to the matching folder below. Close your DAW before replacing an existing
@@ -77,9 +92,9 @@ version, then reopen it and rescan plug-ins if needed.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.16.2/Ressup-EQ-1.16.2-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.16.2/Ressup-EQ-1.16.2-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.16.2/Ressup-EQ-1.16.2-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.2/Ressup-EQ-1.17.2-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.2/Ressup-EQ-1.17.2-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.17.2/Ressup-EQ-1.17.2-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
 
 The Mac VST3 and AU have been validated on macOS. The Windows build has
 **not yet been tested in a Windows DAW**. Mac downloads are not Apple notarized.

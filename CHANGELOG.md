@@ -1,0 +1,47 @@
+# Changelog
+
+## 1.17.2 — 2026-10-15
+
+Changes since the previous published release, 1.16.2. This release includes
+the improvements introduced in the local macOS builds 1.17.0 and 1.17.1.
+
+### Dynamics
+
+- Density is now available in Dynamics: negative values attenuate, zero is
+  neutral, and positive values boost the band when the signal exceeds Threshold.
+- Density ranges from -100% to +100% and scales the available action within
+  the Range and Threshold limits. Attack and Release also apply to boosts.
+- Dynamics and Res Sup retain separate Density settings when switching modes.
+  Dynamics defaults to -100% to preserve the sound of existing projects;
+  Res Sup continues to default to neutral 0%.
+- The response curve, band movement indicator and gain meter show dynamic
+  boosts as well as cuts. Adaptive boosts also work with shapes without a
+  static Gain control.
+- Existing plug-in identities, parameter IDs and saved project values remain
+  compatible. Older projects retain their original downward Dynamics action.
+
+### Interface and spectrum
+
+- Cursor frequency appears at the top of the analyzer, clear of the band
+  parameter panel. Freeze peak frequency uses the same top placement.
+- Frequency labels stay inside the analyzer at its left and right edges.
+- Removed the "PARAMETRIC EQUALIZER" subtitle.
+- Moved Mix between the dB display selector and Input, on the main header row.
+- The compact header gives the analyzer 22 additional pixels of vertical space.
+
+### Downloads and validation
+
+- macOS Apple Silicon: VST3 and self-contained Audio Unit v2, macOS 14 or later.
+- Windows x64: VST3, Windows 10/11.
+- macOS GUI, native editor bridge and DSP regression tests pass. The macOS
+  VST3 passes the Steinberg validator and the AU passes strict Apple auval.
+- The Windows x64 build is cross-compiled and checked for binary architecture,
+  version metadata and runtime imports. Testing in a Windows DAW remains pending.
+- All bundles include the proprietary license and third-party notices.
+  SHA-256 checksums accompany the downloads. Mac bundles are ad-hoc signed
+  and are not Apple notarized.
+
+## 1.16.2 — 2026-10-15
+
+- Included the updated Proprietary Software License and third-party notices
+  in macOS Apple Silicon VST3 / AU and Windows x64 VST3 packages.
