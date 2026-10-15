@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.18.0 — 2026-10-16
+
+- Replaced LU MATCH and BYPASS text buttons with icons and added a settings gear.
+- Analyzer FFT resolution 1024–65536 samples, minimum 0–120 dB (default 100),
+  and five speeds controlling both rise and fall. Outside clicks close settings.
+- Dynamics and Res Sup can run together on a band, Dynamics first. The Edit
+  selector exposes each stage's independent Threshold and Density.
+- Extended Res Sup Q to 0.01–4x; state version 13 preserves older physical Q
+  values and mode behaviour. Parameter IDs and serialized order remain stable.
+- macOS Apple Silicon VST3 and self-contained AU, Windows x64 VST3,
+  and Linux x86-64 CLAP with the custom editor.
+
 ## 1.17.4 — 2026-10-15
 
 - The spectrum uses a fixed 0 to -120 dBFS scale, including saved sessions,
@@ -24,12 +36,6 @@
 - Available for macOS Apple Silicon as VST3 and self-contained Audio Unit v2,
   and for Windows x64 as VST3. Plug-in identities, parameter IDs and saved
   settings remain compatible.
-- Added the Linux x86-64 CLAP package, version 1.17.3-clap.1, with the full
-  graphical editor, automation, sidechain and shared audio engine. Requires
-  glibc 2.35+ (Ubuntu 22.04+) and X11/XWayland hosting.
-- The Linux CLAP passes audio, graphical and official CLAP validator checks,
-  and a REAPER 7.82 Linux load/editor/render test in an Ubuntu 22.04 x86-64
-  userspace under Rosetta. The archive includes a verification manifest.
 
 ## 1.17.2 — 2026-10-15
 
