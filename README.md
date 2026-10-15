@@ -10,7 +10,7 @@ Res Sup. Use whichever combination the track needs, across up to **24 bands**.
 
 Made by **Francesco Valla · Valla Productions**.
 
-![Ressup-EQ with its combined EQ curve, spectrum analyzer, and Dynamics and Res Sup active on the selected band](images/ressup-eq.png)
+![Ressup-EQ 1.20.0 showing frequency competition, the brick-coloured reference EQ curve and editable reference band controls](images/ressup-eq.png)
 
 **Version 1.20.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
