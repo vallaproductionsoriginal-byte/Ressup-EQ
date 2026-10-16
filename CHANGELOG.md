@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.20.1 — 2026-10-17
+
+- Normal EQ bands now run in series in all phase modes. Low Cut + High Cut
+  forms the intended passband instead of producing phase cancellation from
+  parallel difference signals. Solo retains its difference-signal audition.
+- Main and comparison curves follow the same ordered stereo transfer, including
+  asymmetric Left/Right and Mid/Side combinations in Linear mode.
+- Cut slope 0 dB/oct is neutral; 6 dB/oct uses a normalized one-pole design
+  with the correct cutoff. Brickwall uses a 192 dB/oct finite approximation
+  instead of duplicating 96 dB/oct.
+- Added an audio/curve regression sweep for every ordered shape/slope pair,
+  every routing pair, coincident/crossed cutoffs, Mix, Solo and 24 active bands.
+
 ## 1.20.0 — 2026-10-16
 
 - Instances now orders External sidechain, Main, then other live instances.

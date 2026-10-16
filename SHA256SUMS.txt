@@ -1,4 +1,4 @@
-92633ea156fdb094d63c0fcc12d2c92db38972493d19598dfe96a25590ce6490  Ressup-EQ-1.20.0-Windows-x64-VST3.zip
-0850f524434e7e5e342cf6520ab3cee099754b4caf8f9084958587c774138c46  Ressup-EQ-1.20.0-clap.1-Linux-x86_64-CLAP.zip
-d1712327a5f8dae3e696e8fc934de17dae9f73a085c2063e39a7a6857b164a3d  Ressup-EQ-1.20.0-macOS-AppleSilicon-AU.zip
-f0ae3f4018a211ec800ff33cfce6dac34e8dfb0e43881c48c0505f21e91d5a4b  Ressup-EQ-1.20.0-macOS-AppleSilicon-VST3.zip
+a862abf9bccb95f4170c214ae5e6d8833d6e5307b3acde9134cb9defddb2a7da  Ressup-EQ-1.20.1-Windows-x64-VST3.zip
+67171b160afa16a77b22a22f1ace2868ac31ac8786407d33cd9a118195b6bcaa  Ressup-EQ-1.20.1-clap.1-Linux-x86_64-CLAP.zip
+b0d696fa00ec6b767e63b2be98a02203f5bfcdae21ebeaec3cf8c4a9c6e0081d  Ressup-EQ-1.20.1-macOS-AppleSilicon-AU.zip
+560caa2db91d400309e58686235515a8b685504441fa6edb28d2e31c8efa1d1b  Ressup-EQ-1.20.1-macOS-AppleSilicon-VST3.zip

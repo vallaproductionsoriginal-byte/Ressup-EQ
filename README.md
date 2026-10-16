@@ -6,20 +6,35 @@ Kick and bass fill the same low end. A vocal gets buried when the guitars come
 in. A synth turns sharp as the filter opens. Ressup-EQ helps you shape the tone,
 control the moments that jump out, and see how two tracks fit together.
 
-Use **EQ**, **Dynamics** and **Res Sup** across up to **24 bands**. With **1.20.0**,
-bring another track into the analyzer, see where their frequencies overlap,
+Use **EQ**, **Dynamics** and **Res Sup** across up to **24 bands**. Bring another
+track into the analyzer, see where their frequencies overlap,
 and adjust either instance's EQ from the same window while listening to the mix.
 
 Made by **Francesco Valla · Valla Productions**.
 
-**Version 1.20.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.20.1** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-**[Download Ressup-EQ 1.20.0](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.20.0)**
+**[Download Ressup-EQ 1.20.1](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.20.1)**
 
 ![Ressup-EQ 1.20.0 showing frequency competition, the brick-coloured reference EQ curve and editable reference band controls](images/ressup-eq-1.20.0-reference-editing.png)
 
 *Green: the current track's EQ. Brick: the selected reference. Vertical highlights:
 frequencies where the two signals overlap.*
+
+## Fixed in 1.20.1
+
+**Low Cut + High Cut now keeps the intended passband.** Bands process in
+series, so combining curves no longer produces the unintended notch caused
+by the previous parallel sum. The main and reference curves follow the same
+routing, including Left/Right and Mid/Side, in all three phase modes.
+
+For cuts, **0 dB/oct is neutral**, **6 dB/oct has the correct normalized
+cutoff**, and **Brickwall is a finite 192 dB/oct approximation**. Linear mode
+uses a finite FIR; higher Detail improves sharp transitions.
+
+Saved settings still load. Sessions with multiple bands can sound different
+because their combined filtering is now corrected. Solo keeps its existing
+band-contribution audition.
 
 ## Make room for kick and bass from one window
 
@@ -217,9 +232,9 @@ Higher settings use more CPU and can add latency. The **Resolution** setting
 in the gear menu changes the analyzer picture. Choose each according to what
 you need to hear and see.
 
-## Bring an existing session up to 1.20.0
+## Bring an existing session up to 1.20.1
 
-Update **all instances you want to compare to 1.20.0**. Your existing EQ and
+Update **all instances you want to compare to 1.20.1**. Your existing EQ and
 processing settings remain compatible. The Instances browser can also show
 live instances in another open DAW project, so track names help you choose.
 
@@ -240,10 +255,10 @@ separate VST3 installation.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.0/Ressup-EQ-1.20.0-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.0/Ressup-EQ-1.20.0-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.0/Ressup-EQ-1.20.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
-| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.0/Ressup-EQ-1.20.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.1/Ressup-EQ-1.20.1-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.1/Ressup-EQ-1.20.1-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.1/Ressup-EQ-1.20.1-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.1/Ressup-EQ-1.20.1-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
 On Linux, create `~/.clap/` if needed and use a DAW with CLAP support.
 Standard fontconfig, FreeType and X11 desktop libraries are required; on
