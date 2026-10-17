@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.20.2 — 2026-10-17
+
+- Fixed missing Res Sup corrections in the main and comparison curves at
+  very low Res Sup Q values. Broad adaptive voices now remain visible and
+  follow the same filter-design limits as the actual audio processing.
+- Verified Standard, Dynamics, Res Sup and Dynamics + Res Sup together on
+  one combined curve, with every band count from 1 through 24. Added
+  3,168 audio configurations, 40,560 response configurations, 48 live mode
+  transitions and 840 GUI renders, including minimum-Q bass regressions.
+- All six macOS test suites and the combination matrix with AddressSanitizer
+  and UndefinedBehaviorSanitizer passed. Parameter IDs and saved settings
+  remain compatible.
+- Binary distributions: macOS Apple Silicon VST3 and self-contained AU,
+  Windows x64 VST3, and Linux x86-64 CLAP. Project sources are not distributed.
+
 ## 1.20.1 — 2026-10-17
 
 - Normal EQ bands now run in series in all phase modes. Low Cut + High Cut
