@@ -12,16 +12,21 @@ and adjust either instance's EQ from the same window while listening to the mix.
 
 Made by **Francesco Valla · Valla Productions**.
 
-**Version 1.20.2** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.20.4** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-**[Download Ressup-EQ 1.20.2](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.20.2)**
+**[Download Ressup-EQ 1.20.4](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.20.4)**
 
 ![Ressup-EQ 1.20.0 showing frequency competition, the brick-coloured reference EQ curve and editable reference band controls](images/ressup-eq-1.20.0-reference-editing.png)
 
 *Green: the current track's EQ. Brick: the selected reference. Vertical highlights:
 frequencies where the two signals overlap.*
 
-## Fixed in 1.20.2
+## Fixed in 1.20.4
+
+Res Sup detects resonant peaks more reliably on notes and chords, with a more
+consistent response across pitches. Existing settings remain compatible.
+
+## Retained from 1.20.2
 
 **Very broad Res Sup corrections now remain visible.** At minimum Res Sup Q,
 some low-frequency corrections were audible but missing from the main and

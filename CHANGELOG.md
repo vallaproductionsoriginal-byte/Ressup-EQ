@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.20.4 — 2026-10-17
+
+- Improved Res Sup detection on notes and chords, with a more consistent response across pitches.
+- Existing parameter IDs and saved settings remain compatible.
+
 ## 1.20.2 — 2026-10-17
 
 - Fixed missing Res Sup corrections in the main and comparison curves at
