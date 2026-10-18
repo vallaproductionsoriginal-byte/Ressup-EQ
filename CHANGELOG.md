@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.20.8 — 2026-10-18
+
+- Disabled bands stay gray, selectable and saved until explicitly deleted.
+- Click Q to show or hide its curve projection; the label turns red when enabled.
+- Deep Dynamics and Res Sup curves no longer flatten at ±30 dB, including reference curves.
+- The standard EQ scale stays fixed at ±30 dB; changing Range leaves the spectrum unchanged.
+- Existing settings remain compatible.
+
 ## 1.20.4 — 2026-10-17
 
 - Improved Res Sup detection on notes and chords, with a more consistent response across pitches.
