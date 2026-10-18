@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.20.9 — 2026-10-18
+
+- Mix now matches Input and Output in size; Compare and Instances move to the header.
+- Fixed the rising analyzer floor at the -120 dB minimum. Silence stays flat and real weak signals retain the display tilt.
+
 ## 1.20.8 — 2026-10-18
 
 - Disabled bands stay gray, selectable and saved until explicitly deleted.

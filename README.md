@@ -12,16 +12,22 @@ and adjust either instance's EQ from the same window while listening to the mix.
 
 Made by **Francesco Valla · Valla Productions**.
 
-**Version 1.20.8** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.20.9** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-**[Download Ressup-EQ 1.20.8](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.20.8)**
+**[Download Ressup-EQ 1.20.9](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.20.9)**
 
 ![Ressup-EQ 1.20.0 showing frequency competition, the brick-coloured reference EQ curve and editable reference band controls](images/ressup-eq-1.20.0-reference-editing.png)
 
 *Green: the current track's EQ. Brick: the selected reference. Vertical highlights:
 frequencies where the two signals overlap.*
 
-## New in 1.20.8
+## New in 1.20.9
+
+Mix is the same size as Input and Output. Compare and Instances now sit in the
+header, between Freeze and Mix. At the -120 dB analyzer minimum, silence stays
+flat instead of producing a rising high-frequency line.
+
+## Retained from 1.20.8
 
 Disabled bands stay gray and selectable, and keep their settings until you
 explicitly delete them. Click the **Q** label to show or hide the band's curve
@@ -261,9 +267,9 @@ Higher settings use more CPU and can add latency. The **Resolution** setting
 in the gear menu changes the analyzer picture. Choose each according to what
 you need to hear and see.
 
-## Bring an existing session up to 1.20.8
+## Bring an existing session up to 1.20.9
 
-Update **all instances you want to compare to 1.20.8**. Your existing EQ and
+Update **all instances you want to compare to 1.20.9**. Your existing EQ and
 processing settings remain compatible. The Instances browser can also show
 live instances in another open DAW project, so track names help you choose.
 
@@ -284,10 +290,10 @@ separate VST3 installation.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.8/Ressup-EQ-1.20.8-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.8/Ressup-EQ-1.20.8-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.8/Ressup-EQ-1.20.8-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
-| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.8/Ressup-EQ-1.20.8-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.9/Ressup-EQ-1.20.9-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.9/Ressup-EQ-1.20.9-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.9/Ressup-EQ-1.20.9-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.9/Ressup-EQ-1.20.9-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
 On Linux, create `~/.clap/` if needed and use a DAW with CLAP support.
 Standard fontconfig, FreeType and X11 desktop libraries are required; on
