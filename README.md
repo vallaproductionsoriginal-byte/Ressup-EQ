@@ -16,10 +16,10 @@ Made by **Francesco Valla · Valla Productions**.
 
 **[Download Ressup-EQ 1.20.9](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.20.9)**
 
-![Ressup-EQ 1.20.0 showing frequency competition, the brick-coloured reference EQ curve and editable reference band controls](images/ressup-eq-1.20.0-reference-editing.png)
+![Ressup-EQ 1.20.9 showing the current spectrum, band controls and compact header with Compare and Instances beside Mix](images/ressup-eq-1.20.9.png)
 
-*Green: the current track's EQ. Brick: the selected reference. Vertical highlights:
-frequencies where the two signals overlap.*
+*The current interface: Mix matches Input and Output, with Compare and Instances
+in the header above the spectrum.*
 
 ## New in 1.20.9
 
