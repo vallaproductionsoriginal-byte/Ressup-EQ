@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.21.0 — 2026-10-19
+
+- Fixed VST3 automation timing: all queued points and piecewise linear segments
+  are consumed at their sample positions, with callback-independent de-clicking.
+- Added 5 ms trim, Mix and Bypass ramps, smoothed band controls and crossfades
+  for filter topology changes, including rapid reversals. Preserve filled dry
+  history during Phase/Detail reconfiguration and bridge new-path warm-up.
+- Replaced the short, tapered Linear design with a full symmetric 16k/32k FIR
+  grid. Main and instance curves include the actual finite response, including
+  off-grid bass approximation. Updated reported host latency.
+- Natural uses symmetric FIR resampling and an original delayed dry Mix path,
+  removing dispersive resampling phase from neutral parallel processing.
+- Output loudness meters include the actual bypass crossfade and delayed dry.
+- Guarded LU MATCH transient compensation against a reference peak envelope
+  with 3 dB headroom; the ordinary EQ path has no added limiter or clipper.
+- Fine Res Sup peaks can create separate voices; fast-frame strength and gating
+  preserve transient tracking. Retained existing parameter IDs and state format.
+- Added measured-audio and real-VST3 automation regression targets, and updated
+  physical latency/FIR reference checks for the corrected implementation.
+- Instance name/source UI commands retry short background exchange contention.
+
+
 ## 1.20.9 — 2026-10-18
 
 - Mix now matches Input and Output in size; Compare and Instances move to the header.

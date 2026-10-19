@@ -12,16 +12,37 @@ and adjust either instance's EQ from the same window while listening to the mix.
 
 Made by **Francesco Valla · Valla Productions**.
 
-**Version 1.20.9** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.21.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-**[Download Ressup-EQ 1.20.9](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.20.9)**
+**[Download Ressup-EQ 1.21.0](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.21.0)**
 
-![Ressup-EQ 1.20.9 showing the current spectrum, band controls and compact header with Compare and Instances beside Mix](images/ressup-eq-1.20.9.png)
+![Ressup-EQ interface showing the current spectrum, band controls and compact header with Compare and Instances beside Mix](images/ressup-eq-1.20.9.png)
 
 *The current interface: Mix matches Input and Output, with Compare and Instances
 in the header above the spectrum.*
 
-## New in 1.20.9
+## New in 1.21.0
+
+VST3 automation follows every queued point at its sample position. Trim, Mix,
+Bypass and band changes use short, smooth transitions to reduce clicks.
+Linear uses a higher-resolution symmetric FIR, and its main and comparison
+curves show the actual finite filter response. Natural uses symmetric
+oversampling filters and an original, latency-aligned dry Mix path.
+Loudness meters include the actual Bypass signal, and LU MATCH guards
+excessive transient compensation after spectral changes. Res Sup can keep
+separate corrections for close, resolved peaks.
+
+Saved parameter IDs and the state format remain compatible. Corrected
+Linear and Natural responses can sound different from earlier releases,
+and their reported latencies have changed. At 48 kHz, Linear uses 8,704
+samples at Detail 0 and 17,408 samples at Detail 1–5; Natural uses 49 samples
+at Detail 0 and 561 samples at higher Detail. The host receives these values
+for delay compensation. Use a buffer of at least **128 samples** for heavy
+24-band Linear configurations at maximum Detail; a 64-sample stress run
+recorded one missed processing deadline. Very narrow Linear filters remain
+finite-FIR approximations, reflected by the displayed response.
+
+## Retained from 1.20.9
 
 Mix is the same size as Input and Output. Compare and Instances now sit in the
 header, between Freeze and Mix. At the -120 dB analyzer minimum, silence stays
@@ -75,7 +96,7 @@ band-contribution audition.
 
 1. **Put Ressup-EQ on both tracks and play the section together.** Open the
    bass instance, for example, with the kick running through its own instance.
-2. **Click Instances at the bottom, beside Valla Productions.** The browser
+2. **Click Instances in the header, beside Compare and Mix.** The browser
    shows **External sidechain** first, **Main** (the instance you opened) next,
    then the other live instances. Each has a spectrum and applied EQ preview.
    Give instances track names so the kick, bass and other parts are easy to find.
@@ -267,10 +288,11 @@ Higher settings use more CPU and can add latency. The **Resolution** setting
 in the gear menu changes the analyzer picture. Choose each according to what
 you need to hear and see.
 
-## Bring an existing session up to 1.20.9
+## Bring an existing session up to 1.21.0
 
-Update **all instances you want to compare to 1.20.9**. Your existing EQ and
-processing settings remain compatible. The Instances browser can also show
+Update **all instances you want to compare to 1.21.0**. Your existing EQ and
+processing settings remain loadable; Linear/Natural filtering and latency have
+changed as described above. The Instances browser can also show
 live instances in another open DAW project, so track names help you choose.
 
 Compare on/off is saved with the session. Instance names and the chosen source
@@ -290,10 +312,10 @@ separate VST3 installation.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.9/Ressup-EQ-1.20.9-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.9/Ressup-EQ-1.20.9-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.9/Ressup-EQ-1.20.9-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
-| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.20.9/Ressup-EQ-1.20.9-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.21.0/Ressup-EQ-1.21.0-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.21.0/Ressup-EQ-1.21.0-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.21.0/Ressup-EQ-1.21.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.21.0/Ressup-EQ-1.21.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
 On Linux, create `~/.clap/` if needed and use a DAW with CLAP support.
 Standard fontconfig, FreeType and X11 desktop libraries are required; on
