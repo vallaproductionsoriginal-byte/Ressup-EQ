@@ -12,9 +12,9 @@ instance's EQ from the same window while listening to the mix.
 
 Made by **Francesco Valla · Valla Productions**.
 
-**Version 1.22.1** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.23.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-**[Download Ressup-EQ](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.22.1)**
+**[Download Ressup-EQ](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.23.0)**
 
 ![Ressup-EQ with Pre and Post spectra, the combined EQ response, numbered band nodes and the channel balance bar below Gain](images/ressup-eq.png)
 
@@ -47,12 +47,13 @@ selected band's contribution while finding the area you want to change.
    curve; the spectrum keeps simple numbered nodes.
 3. **Choose how it reacts.** Leave the band as regular EQ, enable Dynamics,
    enable Res Sup, or turn both on.
-4. **Set the direction.** Negative Density cuts; positive Density boosts.
-   Res Sup starts at **0%**, so move Density below zero to hear suppression.
-   Dynamics starts at **−100%**, ready to attenuate above its threshold.
+4. **Set the direction.** Negative **Res Sup Amount** cuts; positive Amount
+   boosts. Amount starts at **0%**, so move it below zero to hear suppression.
+   Dynamics uses its own signed **Density**, starting at **−100%**.
 5. **Set a useful limit.** Open Details and choose a modest Range, such as
-   **−6 dB**. Raise Threshold while listening, then adjust Density until the
-   band does enough for the mix.
+   **−6 dB**. Raise Threshold while listening, then adjust Amount for Res Sup
+   or Density for Dynamics. In Res Sup, lower the new **Density** knob to
+   concentrate on fewer dominant resonances.
 6. **Compare at a similar level.** Use Loudness Match beside Output, then Bypass
    to compare the processed and original signal.
 
@@ -118,23 +119,32 @@ Res Sup detector accounts for the change made by Dynamics. External sidechain
 uses its routed source instead.
 
 When both stages are active, **Edit: Dynamics / Edit: Res Sup** chooses which
-stage's **Threshold and Density** you are adjusting. Each stage remembers its
-own values. **Range, Attack, Release and Auto timing are shared** within the band.
+stage's controls you are adjusting: **Threshold, Amount and Density** for Res Sup,
+or **Threshold and Density** for Dynamics. Each stage remembers its own values.
+**Range, Attack, Release and Auto timing are shared** within the band.
 
 **Range sets the available depth.** It runs from **0 to −72 dB**, with new bands
 starting at **−32 dB**. Start closer to zero and increase the depth as you listen.
 
 **Threshold sets when and how much.** Higher percentages let quieter material
 trigger the processing and increase the available action. At full negative
-Density, **Range −6 dB + Threshold 50%** allows up to **3 dB of cut**. The amount
-you hear also depends on the signal and the band's sensitivity. Positive Density
-uses the same limit for boosts. Dynamics spans trigger levels from 0 to −60 dBFS;
+Amount (or Dynamics Density), **Range −6 dB + Threshold 50%** allows up to
+**3 dB of cut**. The amount you hear also depends on the signal and the band's
+sensitivity. Positive Amount uses the same limit for boosts. Dynamics spans trigger levels from 0 to −60 dBFS;
 Res Sup spans 0 to −75 dBFS.
 
-**Density decides direction and strength.** Both stages run from **−100% to
-+100%**: negative attenuates, zero is neutral, and positive boosts. Use negative
-Res Sup Density to tame resonances, or positive values to bring out resonant
-character. Overlapping adaptive corrections stay within the band's limit.
+**Res Sup Amount decides direction and strength.** It runs from **−100% to
++100%**: negative attenuates, zero is neutral, and positive boosts. Dynamics
+retains its signed Density control. Overlapping adaptive corrections stay within
+the band's limit. The existing Res Sup automation parameter keeps its original
+name, **Res Sup Density**, and its original values.
+
+**Res Sup Density selects how many resonances are treated.** The new rotary
+control runs from **0–100%**. At 0% it treats the strongest qualifying peak;
+raising it gradually includes secondary peaks, up to eight at 100%. Threshold
+determines which peaks qualify, Res Sup Q sets their width, and Amount sets
+their direction and strength. New and restored bands default to **100%** to
+retain the previous sound. Each band saves its own Density setting.
 
 **Attack and Release set the movement.** Attack runs from **1–500 ms** and
 Release from **10–2000 ms**. Leave Auto timing on as a starting point; editing
@@ -274,10 +284,10 @@ The AU includes its engine and works without a separate VST3 installation.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.22.1/Ressup-EQ-1.22.1-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.22.1/Ressup-EQ-1.22.1-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.22.1/Ressup-EQ-1.22.1-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
-| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.22.1/Ressup-EQ-1.22.1-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.23.0/Ressup-EQ-1.23.0-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.23.0/Ressup-EQ-1.23.0-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.23.0/Ressup-EQ-1.23.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.23.0/Ressup-EQ-1.23.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
 On Linux, create `~/.clap/` if needed and use a CLAP-compatible DAW. Standard
 fontconfig, FreeType and X11 desktop libraries are required. On Wayland, the

@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.23.0 — 2026-10-20
+
+- Added a per-band Res Sup Density knob from 0 to 100%, selecting the dominant
+  resonance through up to eight simultaneous peaks. Secondary peaks enter
+  gradually and leave through the existing Release timing.
+- Relabeled the signed Res Sup intensity control Amount in the editor. Its
+  existing host parameter name, automation ID and stored values remain intact.
+- Appended 24 peak-density parameters in state format 15. Older projects default
+  to 100% Density and retain all previous parameter positions and corrections.
+- Expanded parameter storage and versioned the inter-instance exchange for
+  the new layout; comparison/editing connects instances using this layout.
+
 ## 1.22.1 — 2026-10-20
 
 - Scrolling anywhere in the editor adjusts the selected band's Q, including
