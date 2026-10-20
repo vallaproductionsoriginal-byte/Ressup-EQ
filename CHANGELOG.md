@@ -1,5 +1,24 @@
 # Changelog
 
+## 1.24.0 — 2026-10-20
+
+- Save instance names, stable identities, comparison selections and every band's
+  instance sidechain source in the project. Chains reconnect automatically when
+  source instances load later or in a different order.
+- Added the MAIN / named-instance selector beside Instances and removed the
+  duplicate Main / Reference buttons above the band parameters.
+- Replaced each band's External SC button with a source menu: External SC for
+  the DAW input, MAIN for internal detection, and the other live instances.
+- Added stereo Post audio exchange between instances and host processes for
+  both Dynamics and Res Sup, including sample-rate conversion and silent release
+  when a source stops or closes.
+- Fixed VST3 mono sidechain negotiation while retaining stereo sidechain support.
+- Instance metadata is appended in state format 16; existing parameter IDs,
+  automation values and older parameter-only states remain compatible. Older
+  projects need names and instance sources assigned once, then saved again.
+- Binary distributions only: macOS Apple Silicon VST3 / AU, Windows x64 VST3,
+  and Linux x86-64 CLAP. No project source code is distributed.
+
 ## 1.23.0 — 2026-10-20
 
 - Added a per-band Res Sup Density knob from 0 to 100%, selecting the dominant

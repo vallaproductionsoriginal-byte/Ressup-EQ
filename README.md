@@ -12,9 +12,9 @@ instance's EQ from the same window while listening to the mix.
 
 Made by **Francesco Valla · Valla Productions**.
 
-**Version 1.23.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.24.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-**[Download Ressup-EQ](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.23.0)**
+**[Download Ressup-EQ](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.24.0)**
 
 ![Ressup-EQ with Pre and Post spectra, the combined EQ response, numbered band nodes and the channel balance bar below Gain](images/ressup-eq.png)
 
@@ -157,10 +157,15 @@ sets the width of individual adaptive corrections: lower values are broader,
 higher values narrower. Its default is **1x**. Res Sup tracks up to **eight
 resonances per band**, including separately resolved peaks in notes and chords.
 
-In Details, **External SC** lets another signal trigger a band's adaptive
-processing. Route it to the plug-in's sidechain input in the DAW, then enable
-External SC. **SC filter**, **SC Low** and **SC High** focus what the detector
-listens to without filtering the main audio path.
+In Details, the **sidechain source menu** selects what triggers that band's
+Dynamics and Res Sup. Its first entry, **External SC**, uses the plug-in's
+sidechain input routed by the DAW, in mono or stereo. **MAIN** uses the band's
+own input. The remaining entries use the named live instances' Post audio,
+including instances with closed editors or in another host process. Each band
+chooses independently of the comparison display. A stopped or closed source
+releases the processing. **SC filter**, **SC Low** and **SC High** focus what the
+detector listens to without filtering the main audio path. Instance audio is
+buffered by a host block; scheduling between tracks or hosts can add delay.
 
 ## Make room for kick and bass from one window
 
@@ -176,10 +181,10 @@ listens to without filtering the main audio path.
 4. **Choose which track should own that area.** Listen for the kick's weight
    and the bass's body. The highlights give you a place to investigate;
    overlapping energy can also be exactly what the arrangement needs.
-5. **Shape either EQ from this window.** Main stays green; the reference is
-   brick-coloured. Choose **Main / Reference** above the band panel, or click
-   a node, to select the instance to edit. Drag, change Q, use its band controls,
-   or add and delete bands while listening.
+5. **Shape either EQ from this window.** Use the selector beside **Instances**
+   to choose **MAIN** or a named reference directly. Main stays green; the reference
+   is brick-coloured. Clicking a node also selects the instance to edit. Drag,
+   change Q, use its band controls, or add and delete bands while listening.
 
 **Editing Reference changes that track's actual EQ and sound.** Those settings
 are saved with the target instance, including when its editor is closed.
@@ -195,13 +200,19 @@ The competition display itself applies no cuts or automatic ducking.
 To compare audio without another Ressup-EQ instance, route it to the external
 sidechain input and choose **External sidechain** in Instances. That source
 provides comparison audio. To edit another track's EQ, select its Ressup-EQ
-instance as the reference. External SC for a band's detector is a separate switch.
+instance as the reference. A band's sidechain source menu controls its detector
+separately.
 
 Instances are discoverable across formats and host processes for the same user,
 including with closed editors, up to **128 live instances**. Other open DAW
 projects can appear too. Use matching plug-in versions for instance exchange.
-Compare on/off is saved in the session; names and selected sources last while
-the instances remain loaded. Select the reference again after reopening a project.
+Names, comparison selections and each band's instance sidechain sources are
+saved in the project. Connections restore automatically, including when the DAW
+loads the source instances later or in a different order. Each instance has a
+saved identity; temporary host IDs can change without renaming it or breaking
+the chain. Duplicating a live instance creates a separate identity.
+Projects saved with older versions have no instance names or connections in
+their state: assign them once and save again with this version.
 Turning Compare off returns editing to Main. If a reference closes, its
 highlights clear and editing returns to Main.
 
@@ -284,10 +295,10 @@ The AU includes its engine and works without a separate VST3 installation.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.23.0/Ressup-EQ-1.23.0-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.23.0/Ressup-EQ-1.23.0-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.23.0/Ressup-EQ-1.23.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
-| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.23.0/Ressup-EQ-1.23.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.24.0/Ressup-EQ-1.24.0-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.24.0/Ressup-EQ-1.24.0-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.24.0/Ressup-EQ-1.24.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.24.0/Ressup-EQ-1.24.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
 On Linux, create `~/.clap/` if needed and use a CLAP-compatible DAW. Standard
 fontconfig, FreeType and X11 desktop libraries are required. On Wayland, the
