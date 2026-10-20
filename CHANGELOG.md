@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.22.1 — 2026-10-20
+
+- Scrolling anywhere in the editor adjusts the selected band's Q, including
+  over controls or another band's node. Shift retains fine adjustment, and
+  scrolling keeps the current main/reference selection.
+- Clicking empty spectrum space deselects the band and fully hides its
+  parameter panel. Clicking a band node selects it and restores the controls.
+- Scroll routing preserves other control values and balanced host gestures.
+
 ## 1.22.0 — 2026-10-20
 
 - Added a continuous per-band L/R or Mid/Side processing balance below Gain.

@@ -12,9 +12,9 @@ instance's EQ from the same window while listening to the mix.
 
 Made by **Francesco Valla · Valla Productions**.
 
-**Version 1.22.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.22.1** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-**[Download Ressup-EQ](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.22.0)**
+**[Download Ressup-EQ](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.22.1)**
 
 ![Ressup-EQ with Pre and Post spectra, the combined EQ response, numbered band nodes and the channel balance bar below Gain](images/ressup-eq.png)
 
@@ -40,7 +40,8 @@ selected band's contribution while finding the area you want to change.
 ## Get a band working in a few moves
 
 1. **Find the area.** Double-click empty spectrum space to add a band. Drag its
-   node for frequency and gain; use the wheel over the node for Q.
+   node for frequency and gain. With a band selected, scroll anywhere in the
+   plug-in to adjust its Q; the pointer can be away from its node.
 2. **Choose the curve.** Right-click the node to open the compact curve menu,
    or use **Shape** in the parameter panel. The menus show an icon beside each
    curve; the spectrum keeps simple numbered nodes.
@@ -57,8 +58,9 @@ selected band's contribution while finding the area you want to change.
 
 Hold **Shift** for finer dragging and wheel moves. Numeric fields accept typed
 values, including frequencies in kHz. Double-click a control to reset it.
-Click a node to select its band; use **Delete / Backspace** or the bin icon to
-remove it. Disabled bands stay gray and selectable, retain their settings and
+Click a node to select its band and show its controls. Click empty spectrum
+space to deselect and hide the parameter panel. Use **Delete / Backspace** or
+the bin icon to remove the selected band. Disabled bands stay gray and selectable, retain their settings and
 reserve their slots until you delete them.
 
 The lower arrow folds the parameter panel to its band number, Enable, Solo and
@@ -272,10 +274,10 @@ The AU includes its engine and works without a separate VST3 installation.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.22.0/Ressup-EQ-1.22.0-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.22.0/Ressup-EQ-1.22.0-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.22.0/Ressup-EQ-1.22.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
-| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.22.0/Ressup-EQ-1.22.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.22.1/Ressup-EQ-1.22.1-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.22.1/Ressup-EQ-1.22.1-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.22.1/Ressup-EQ-1.22.1-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.22.1/Ressup-EQ-1.22.1-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
 On Linux, create `~/.clap/` if needed and use a CLAP-compatible DAW. Standard
 fontconfig, FreeType and X11 desktop libraries are required. On Wayland, the
