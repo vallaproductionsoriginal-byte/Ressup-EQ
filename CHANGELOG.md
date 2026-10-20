@@ -16,8 +16,6 @@
 - Instance metadata is appended in state format 16; existing parameter IDs,
   automation values and older parameter-only states remain compatible. Older
   projects need names and instance sources assigned once, then saved again.
-- Binary distributions only: macOS Apple Silicon VST3 / AU, Windows x64 VST3,
-  and Linux x86-64 CLAP. No project source code is distributed.
 
 ## 1.23.0 — 2026-10-20
 
