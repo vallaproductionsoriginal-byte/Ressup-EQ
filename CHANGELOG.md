@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.25.0 — 2026-10-21
+
+- Res Sup now tracks up to 64 simultaneous resonances in each band. Density
+  selects one through 64 peaks; Amount, Threshold and Q retain their roles.
+- Dense fine-resolution peaks remain eligible when their coarse FFT spectrum
+  merges into a plateau, with current short-window energy gating.
+- Process only active/releasing filters; reuse preallocated Range-limiter
+  geometry and identical gain calculations without changing its ceiling.
+- Extend local, finite Linear and cross-instance curves beyond the eighth voice.
+  Shared comparison data uses a separate v6 exchange.
+- State format 17 and preset format 14 preserve older one-to-eight Density
+  budgets. Existing IDs and parameter positions are retained. Old DAW Density
+  automation percentages need rescaling to preserve their previous budgets.
+
 ## 1.24.0 — 2026-10-20
 
 - Save instance names, stable identities, comparison selections and every band's

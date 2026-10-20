@@ -12,9 +12,9 @@ instance's EQ from the same window while listening to the mix.
 
 Made by **Francesco Valla · Valla Productions**.
 
-**Version 1.24.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.25.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-**[Download Ressup-EQ](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.24.0)**
+**[Download Ressup-EQ](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.25.0)**
 
 ![Ressup-EQ with Pre and Post spectra, the combined EQ response, numbered band nodes and the channel balance bar below Gain](images/ressup-eq.png)
 
@@ -141,10 +141,16 @@ name, **Res Sup Density**, and its original values.
 
 **Res Sup Density selects how many resonances are treated.** The new rotary
 control runs from **0–100%**. At 0% it treats the strongest qualifying peak;
-raising it gradually includes secondary peaks, up to eight at 100%. Threshold
+raising it gradually includes secondary peaks, up to 64 at 100%. Threshold
 determines which peaks qualify, Res Sup Q sets their width, and Amount sets
-their direction and strength. New and restored bands default to **100%** to
-retain the previous sound. Each band saves its own Density setting.
+their direction and strength. New bands default to **100%**. Each band saves its
+own Density setting. Projects saved with state version 16 or earlier and `.rsp`
+presets up to format 13 retain their old one-to-eight selection budget through
+a Density conversion (old 100% becomes approximately 11.11%). Turn Density up
+to 100% to use all 64 voices in a restored band. Existing parameter IDs and state
+positions are unchanged. DAW automation envelopes for this particular Density
+parameter still contain their original percentages and must be rescaled if the
+old automated selection budget is required.
 
 **Attack and Release set the movement.** Attack runs from **1–500 ms** and
 Release from **10–2000 ms**. Leave Auto timing on as a starting point; editing
@@ -154,7 +160,7 @@ automatic timing is active.
 **Main Q and Res Sup Q do different jobs.** Main Q focuses the band and its
 sensitivity around the chosen frequency. **Res Sup Q**, from **0.01x to 4x**,
 sets the width of individual adaptive corrections: lower values are broader,
-higher values narrower. Its default is **1x**. Res Sup tracks up to **eight
+higher values narrower. Its default is **1x**. Res Sup tracks up to **64
 resonances per band**, including separately resolved peaks in notes and chords.
 
 In Details, the **sidechain source menu** selects what triggers that band's
@@ -295,10 +301,10 @@ The AU includes its engine and works without a separate VST3 installation.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.24.0/Ressup-EQ-1.24.0-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.24.0/Ressup-EQ-1.24.0-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.24.0/Ressup-EQ-1.24.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
-| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.24.0/Ressup-EQ-1.24.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.25.0/Ressup-EQ-1.25.0-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.25.0/Ressup-EQ-1.25.0-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.25.0/Ressup-EQ-1.25.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.25.0/Ressup-EQ-1.25.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
 On Linux, create `~/.clap/` if needed and use a CLAP-compatible DAW. Standard
 fontconfig, FreeType and X11 desktop libraries are required. On Wayland, the
