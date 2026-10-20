@@ -5,10 +5,10 @@
 !README.md
 !SHA256SUMS.txt
 !THIRD_PARTY_NOTICES.md
-!Ressup-EQ-1.21.0-macOS-AppleSilicon-VST3.zip
-!Ressup-EQ-1.21.0-macOS-AppleSilicon-AU.zip
-!Ressup-EQ-1.21.0-Windows-x64-VST3.zip
-!Ressup-EQ-1.21.0-clap.1-Linux-x86_64-CLAP.zip
+!Ressup-EQ-1.22.0-macOS-AppleSilicon-VST3.zip
+!Ressup-EQ-1.22.0-macOS-AppleSilicon-AU.zip
+!Ressup-EQ-1.22.0-Windows-x64-VST3.zip
+!Ressup-EQ-1.22.0-clap.1-Linux-x86_64-CLAP.zip
 !licenses/
 !licenses/AudioUnitSDK-LICENSE.txt
 !licenses/CLAP-SDK-LICENSE.txt
@@ -17,5 +17,4 @@
 !licenses/JUCE.spdx.json
 !licenses/VST3-SDK-LICENSE.txt
 !images/
-!images/ressup-eq-1.20.0-reference-editing.png
-!images/ressup-eq-1.20.9.png
+!images/ressup-eq.png

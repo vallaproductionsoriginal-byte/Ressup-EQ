@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.22.0 — 2026-10-20
+
+- Added a continuous per-band L/R or Mid/Side processing balance below Gain.
+  Both components retain the full effect at the centre; moving toward one
+  reduces the other component’s processed contribution without panning dry audio.
+- Added the saved Curve suggetion preference for frequency-based initial
+  High Pass, Low Shelf, Bell, High Shelf or Low Pass insertion.
+- Right-clicking a band node opens a compact curve menu with all ten icons.
+  Curve icons remain in selection menus; spectrum nodes stay numbered.
+- Expanded the analyzer to the left and added logarithmic frequency
+  subdivisions. The right-hand dBFS spectrum scale remains independent of
+  the EQ response; the left gain scale is hidden.
+- Preserved all existing channel automation choices and parameter IDs.
+  Appended the new preference and per-band balances in state format 14;
+  older states retain their previous channel routing.
+- Rewrote the README as one current feature guide and replaced its screenshot.
+
 ## 1.21.0 — 2026-10-19
 
 - Fixed VST3 automation timing: all queued points and piecewise linear segments
