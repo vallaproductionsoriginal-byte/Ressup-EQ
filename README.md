@@ -16,6 +16,9 @@ Made by **Francesco Valla · Valla Productions**.
 
 **[Download Ressup-EQ](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.26.2)**
 
+**Installing on Mac?** Follow the [step-by-step Mac guide](#macos-step-by-step-installation),
+including help with macOS security warnings.
+
 ![Ressup-EQ with Pre and Post spectra, the combined EQ response, numbered band nodes and the channel balance bar below Gain](images/ressup-eq.png)
 
 *One window for tone, dynamic control and resonance suppression, with more room
@@ -358,7 +361,110 @@ On Linux, create `~/.clap/` if needed and use a CLAP-compatible DAW. Standard
 fontconfig, FreeType and X11 desktop libraries are required. On Wayland, the
 DAW must host the editor through X11/XWayland.
 
-Mac builds are ad-hoc signed and are **not Apple notarized**. They are validated
+### macOS: step-by-step installation
+
+You do **not** need to be a developer, install Xcode or have an Apple Developer
+account to use Ressup-EQ. You need **macOS 14 or later** and a Mac with an
+**Apple Silicon chip (M series)**. These downloads do not support Intel Macs.
+Check your Mac in **Apple menu > About This Mac**.
+
+#### 1. Download and copy the plug-in
+
+1. Quit your DAW completely before installing or updating.
+2. Download **Mac AU** from the table above for **Logic Pro or GarageBand**.
+   For **Ableton Live, REAPER or another VST3 host**, choose **Mac VST3**.
+   The AU works on its own; installing both formats is optional.
+3. Double-click the downloaded ZIP in Finder to extract it. Keep the entire
+   `Ressup-EQ.component` or `Ressup-EQ.vst3` item together; do not open its
+   contents or copy only the files inside it. It is a plug-in loaded by your
+   DAW, so double-clicking it does not launch an app.
+4. In Finder, press **Shift + Command + G** (**Go > Go to Folder**), paste the
+   destination for your format and press Return:
+
+   | Format | Copy this item | Destination |
+   | --- | --- | --- |
+   | AU | `Ressup-EQ.component` | `~/Library/Audio/Plug-Ins/Components/` |
+   | VST3 | `Ressup-EQ.vst3` | `~/Library/Audio/Plug-Ins/VST3/` |
+
+   Keep the `~` at the start: it selects your own user Library. If the folder
+   does not exist, go to `~/Library/` and create the missing `Audio`, `Plug-Ins`
+   and `Components` or `VST3` folders with **File > New Folder**.
+5. Drag the extracted plug-in into that folder. If updating, replace the old
+   item. Use the same installation location as before to avoid duplicate copies.
+
+#### 2. If macOS blocks the plug-in
+
+**These builds are not signed with an Apple Developer ID certificate and are
+not notarized by Apple.** They have an **ad-hoc (local) signature**, which does
+not certify the developer's identity. macOS may therefore block the downloaded
+plug-in or say that the developer cannot be verified. This is separate from
+whether the plug-in passes audio validation.
+
+Use the following steps only for a download from the
+[official Ressup-EQ releases](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases)
+that you choose to trust.
+
+First, open your DAW and let it scan the plug-in. If macOS displays a security
+warning, dismiss it and open **System Settings > Privacy & Security**. If an
+**Open Anyway** button appears for Ressup-EQ, click it, authenticate if asked,
+and confirm. Reopen the DAW and rescan. Apple explains this option in
+[Safely open apps on your Mac](https://support.apple.com/en-us/102445).
+
+If there is no **Open Anyway** option for the plug-in, you can remove its
+download quarantine flag with Terminal:
+
+1. Quit the DAW again. Make sure you have already copied the plug-in to the
+   user Library folder in step 1.
+2. Press **Command + Space**, type **Terminal**, and press Return.
+3. Copy and paste the command for the format you installed, then press Return.
+   If you installed both formats, run each command separately.
+
+**For AU:**
+
+```sh
+xattr -dr com.apple.quarantine "$HOME/Library/Audio/Plug-Ins/Components/Ressup-EQ.component"
+```
+
+**For VST3:**
+
+```sh
+xattr -dr com.apple.quarantine "$HOME/Library/Audio/Plug-Ins/VST3/Ressup-EQ.vst3"
+```
+
+These commands target only the named Ressup-EQ plug-in and its contents. They
+remove the download quarantine flag; they do not add an Apple signature or
+notarization. No administrator password or developer tools are required for
+these user Library paths. Do not disable Gatekeeper for the whole Mac.
+
+Terminal normally returns to the prompt without a success message. If it says
+**No such file**, check that the plug-in is in the exact folder shown above.
+If it reports that `com.apple.quarantine` is not present, that flag is already
+absent. If an error persists, download and extract a fresh copy from the official
+release and check your Mac's compatibility before trying again.
+
+#### 3. Find Ressup-EQ in your DAW
+
+Reopen the DAW and rescan its plug-ins if needed. Look for **Ressup-EQ** under
+**Valla Productions**.
+
+- **Logic Pro:** open **Logic Pro > Settings > Plug-in Manager**, select
+  Ressup-EQ and click **Reset & Rescan Selection**. See
+  [Apple's Plug-in Manager guide](https://support.apple.com/guide/logicpro/lgcp9e26ef17/mac).
+- **GarageBand:** reopen it after installing the AU. If the new AU is still
+  missing, restart the Mac and check the Audio Units menu again.
+- **Ableton Live:** in **Settings/Preferences > Plug-Ins**, enable **Use VST3
+  Plug-In System Folders** for VST3, or **Use Audio Units** for AU, then rescan.
+  See [Ableton's macOS plug-in guide](https://help.ableton.com/hc/en-us/articles/209068929-Using-AU-and-VST-plug-ins-on-macOS).
+- **Other VST3 hosts:** enable VST3 scanning and rescan the installation folder.
+  Run an Apple Silicon version of the host natively for this arm64 VST3 build.
+
+If the AU still does not appear, restart your Mac once and repeat the scan.
+If macOS reports the plug-in as damaged, try a fresh official download first;
+that message alone does not establish that quarantine is the cause.
+
+### Package validation
+
+The Mac builds are validated
 with the VST3 and Audio Unit validators. Windows x64 is cross-built and checked
 for architecture, version, exports and runtime dependencies; **native Windows
 DAW testing remains pending**. Linux CLAP is checked with audio and editor tests,
