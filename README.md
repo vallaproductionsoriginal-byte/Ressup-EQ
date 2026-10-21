@@ -12,9 +12,9 @@ instance's EQ from the same window while listening to the mix.
 
 Made by **Francesco Valla · Valla Productions**.
 
-**Version 1.25.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.26.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-**[Download Ressup-EQ](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.25.0)**
+**[Download Ressup-EQ](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.26.0)**
 
 ![Ressup-EQ with Pre and Post spectra, the combined EQ response, numbered band nodes and the channel balance bar below Gain](images/ressup-eq.png)
 
@@ -63,6 +63,27 @@ Click a node to select its band and show its controls. Click empty spectrum
 space to deselect and hide the parameter panel. Use **Delete / Backspace** or
 the bin icon to remove the selected band. Disabled bands stay gray and selectable, retain their settings and
 reserve their slots until you delete them.
+
+New instances open with an empty EQ: no bands, no selected parameter panel,
+unity Input/Output and 100% Mix. Opening a saved project restores its own state.
+
+The **folder icon before Pre** opens the preset menu. **Factory (20 presets)**
+contains Init and starting points for vocals, drums, bass, guitars, piano,
+synths, strings, spoken voice and mix/master processing. **Open preset...**
+loads `.rseq` files (and legacy `.rsp` files); **Save preset as...** saves the
+current local instance as `.rseq`. **Show preset folder** opens the directory.
+Saving or loading a preset uses the local instance, even while a reference is
+selected for editing. Loading replaces the EQ, including clearing unused bands.
+
+Factory files are created in the `Factory` subfolder when the menu is first
+opened. Existing files are preserved. User presets saved directly in the preset
+folder also appear in the menu.
+
+| System | User preset folder |
+| --- | --- |
+| macOS | `~/Library/Audio/Presets/Valla Productions/Ressup-EQ/` |
+| Windows | `%APPDATA%\Valla Productions\Ressup-EQ\Presets\` |
+| Linux | `$XDG_DATA_HOME/valla-productions/ressup-eq/presets/`, default `~/.local/share/valla-productions/ressup-eq/presets/` |
 
 The lower arrow folds the parameter panel to its band number, Enable, Solo and
 Delete controls. The upper handle opens **Details** for Range, sidechain filters,
@@ -177,7 +198,7 @@ buffered by a host block; scheduling between tracks or hosts can add delay.
 
 1. **Put Ressup-EQ on both tracks and play the section together.** Open the
    bass instance with the kick running through its own instance.
-2. **Click Instances in the header, beside Compare and Mix.** The browser
+2. **Click the Instances icon in the header, beside Compare and Mix.** The browser
    lists **External sidechain**, then **Main**, then the other live instances.
    Each has a spectrum and applied EQ preview. Give instances track names so
    the kick, bass and other parts are easy to find.
@@ -253,7 +274,15 @@ Open the **gear icon** to adjust the view:
 | **Curve suggetion** | Choose the initial curve from the frequency where you insert a band. |
 
 Analyzer resolution, minimum and speed affect the display without adding audio
-latency. The settings are saved per instance. Click outside the menu to close it.
+latency. The settings are saved per instance. **Save as default** remembers
+Resolution, Minimum, Speed and Curve suggestion for newly inserted instances,
+across plugin formats. **Reset default** restores factory settings in the current
+instance and removes saved startup preferences. Bands and audio controls are
+excluded from these defaults. Click outside the menu to close it.
+
+Defaults are stored in `~/Library/Application Support/Valla Productions/Ressup-EQ/`
+on macOS, `%APPDATA%\Valla Productions\Ressup-EQ\` on Windows, and
+`$XDG_CONFIG_HOME/Valla Productions/Ressup-EQ/` on Linux (default `~/.config/`).
 
 ## Judge changes at a similar level
 
@@ -301,10 +330,10 @@ The AU includes its engine and works without a separate VST3 installation.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.25.0/Ressup-EQ-1.25.0-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.25.0/Ressup-EQ-1.25.0-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.25.0/Ressup-EQ-1.25.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
-| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.25.0/Ressup-EQ-1.25.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.26.0/Ressup-EQ-1.26.0-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.26.0/Ressup-EQ-1.26.0-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.26.0/Ressup-EQ-1.26.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.26.0/Ressup-EQ-1.26.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
 On Linux, create `~/.clap/` if needed and use a CLAP-compatible DAW. Standard
 fontconfig, FreeType and X11 desktop libraries are required. On Wayland, the

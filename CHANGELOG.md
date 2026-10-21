@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.26.0 — 2026-10-21
+
+- New instances open with all band slots empty and the parameter panel hidden.
+- Settings now has Save as default and Reset default for analyzer resolution,
+  minimum, speed and curve suggestion. New instances share saved preferences
+  across formats; restored projects retain their own settings.
+- Replaced the header Instances label with an accessible icon.
+- Added a folder icon before Pre with 20 factory presets, user presets, Open,
+  Save as and Show preset folder. Presets use `.rseq`; legacy `.rsp` remains
+  readable. User directories follow macOS, Windows and Linux conventions.
+- Preset writes are atomic and retain full numeric precision and Unicode paths.
+
 ## 1.25.0 — 2026-10-21
 
 - Res Sup now tracks up to 64 simultaneous resonances in each band. Density
@@ -122,7 +134,7 @@
   and UndefinedBehaviorSanitizer passed. Parameter IDs and saved settings
   remain compatible.
 - Binary distributions: macOS Apple Silicon VST3 and self-contained AU,
-  Windows x64 VST3, and Linux x86-64 CLAP. Project sources are not distributed.
+  Windows x64 VST3, and Linux x86-64 CLAP.
 
 ## 1.20.1 — 2026-10-17
 
