@@ -12,9 +12,9 @@ instance's EQ from the same window while listening to the mix.
 
 Made by **Francesco Valla · Valla Productions**.
 
-**Version 1.26.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.26.2** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-**[Download Ressup-EQ](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.26.0)**
+**[Download Ressup-EQ](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.26.2)**
 
 ![Ressup-EQ with Pre and Post spectra, the combined EQ response, numbered band nodes and the channel balance bar below Gain](images/ressup-eq.png)
 
@@ -160,29 +160,48 @@ retains its signed Density control. Overlapping adaptive corrections stay within
 the band's limit. The existing Res Sup automation parameter keeps its original
 name, **Res Sup Density**, and its original values.
 
-**Res Sup Density selects how many resonances are treated.** The new rotary
-control runs from **0–100%**. At 0% it treats the strongest qualifying peak;
-raising it gradually includes secondary peaks, up to 64 at 100%. Threshold
-determines which peaks qualify, Res Sup Q sets their width, and Amount sets
-their direction and strength. New bands default to **100%**. Each band saves its
-own Density setting. Projects saved with state version 16 or earlier and `.rsp`
-presets up to format 13 retain their old one-to-eight selection budget through
-a Density conversion (old 100% becomes approximately 11.11%). Turn Density up
-to 100% to use all 64 voices in a restored band. Existing parameter IDs and state
-positions are unchanged. DAW automation envelopes for this particular Density
-parameter still contain their original percentages and must be rescaled if the
-old automated selection budget is required.
+**Res Sup Density selects how many resonances are treated.** The rotary control
+runs from **0–100%**. At 0% it treats the strongest qualifying peak; raising it
+includes more peaks up to the current per-band capacity. That capacity adapts
+to the number of enabled bands with Res Sup switched on:
+
+| Active Res Sup bands | Control points per band at Density 100% |
+| --- | --- |
+| 1 | **512** |
+| 2–3 | **384** |
+| 4–6 | **256** |
+| 7–12 | **128** |
+| 13–24 | **64** |
+
+Disabled bands are excluded. An enabled band with Res Sup switched on still
+counts when Amount is 0%. The capacity is a maximum; the signal and Threshold
+determine how many resonances qualify. New bands default to **100%** Density;
+each band saves its own setting. Projects saved with state version 16 or earlier
+and `.rsp` presets up to format 13 retain the established Density conversion
+(old 100% becomes approximately 11.11%). Parameter IDs and state positions stay
+unchanged. Existing Density automation keeps its saved percentages; rescale it
+if you need the older selection budget at the new capacity.
+
+**The selected curve shapes Res Sup sensitivity.** Shape remains available
+with Res Sup enabled. **All Pass** gives uniform sensitivity across the full
+frequency range. **Bell** focuses around the chosen frequency. **Low Shelf**
+and **High Shelf** focus toward their respective sides; **Low Cut, High Cut,
+Notch and Band Pass** follow their filter passbands, including the cut slope.
+**Tilt Shelf** and **Flat Tilt** follow the tilt direction set by Gain; zero Gain
+gives uniform sensitivity. Res Sup still corrects the resonances it detects.
 
 **Attack and Release set the movement.** Attack runs from **1–500 ms** and
 Release from **10–2000 ms**. Leave Auto timing on as a starting point; editing
 either control switches to manual timing. **(A)** beside a timing label means
 automatic timing is active.
 
-**Main Q and Res Sup Q do different jobs.** Main Q focuses the band and its
-sensitivity around the chosen frequency. **Res Sup Q**, from **0.01x to 4x**,
+**Main Q and Res Sup Q do different jobs.** Main Q controls the selected
+curve, including its transition or focus around the chosen frequency.
+**Res Sup Q**, from **0.01x to 4x**,
 sets the width of individual adaptive corrections: lower values are broader,
-higher values narrower. Its default is **1x**. Res Sup tracks up to **64
-resonances per band**, including separately resolved peaks in notes and chords.
+higher values narrower. Its default is **1x**. Res Sup tracks up to **512
+resonances per band** with one active band, including separately resolved peaks
+in notes and chords. The table above shows the capacity for larger setups.
 
 In Details, the **sidechain source menu** selects what triggers that band's
 Dynamics and Res Sup. Its first entry, **External SC**, uses the plug-in's
@@ -330,10 +349,10 @@ The AU includes its engine and works without a separate VST3 installation.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.26.0/Ressup-EQ-1.26.0-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.26.0/Ressup-EQ-1.26.0-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.26.0/Ressup-EQ-1.26.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
-| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.26.0/Ressup-EQ-1.26.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.26.2/Ressup-EQ-1.26.2-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.26.2/Ressup-EQ-1.26.2-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.26.2/Ressup-EQ-1.26.2-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.26.2/Ressup-EQ-1.26.2-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
 On Linux, create `~/.clap/` if needed and use a CLAP-compatible DAW. Standard
 fontconfig, FreeType and X11 desktop libraries are required. On Wayland, the
@@ -348,7 +367,7 @@ userspace running under Rosetta on the development Mac. These checks establish
 functionality, rather than performance on a physical Windows or Linux machine.
 
 The release contains **four binary packages** and checksums. Packages include
-compiled plug-ins and their licenses. **Project source code is not distributed.**
+compiled plug-ins, installation information and licenses.
 File checksums are in [SHA256SUMS.txt](SHA256SUMS.txt).
 
 ## Credits and license

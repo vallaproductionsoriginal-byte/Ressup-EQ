@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.26.2 — 2026-10-21
+
+- Res Sup detection now follows the selected curve rather than a fixed Bell
+  mask. All Pass has uniform sensitivity across the spectrum.
+- Shelf, cut, Notch, Band Pass and both Tilt types use their appropriate
+  frequency envelopes; cut slope and Tilt Gain direction are respected.
+- Discard stale fine candidates when switching curve or cut slope.
+- Add detector and rendered-audio regressions for every shape.
+
+## 1.26.1 — 2026-10-21
+
+- Keep all ten band curves and cut slopes selectable with Res Sup active, alone
+  or together with Dynamics; use the chosen curve in audio and every preview.
+- Include adaptive resonance capacity: 512 / 384 / 256 / 128 / 64 points per
+  band for 1 / 2–3 / 4–6 / 7–12 / 13–24 enabled Res Sup bands.
+- Verify node curve selection, gain/slope availability and audio across all
+  shape/slope variants in Zero Latency, Natural and Linear modes.
+
 ## 1.26.0 — 2026-10-21
 
 - New instances open with all band slots empty and the parameter panel hidden.
