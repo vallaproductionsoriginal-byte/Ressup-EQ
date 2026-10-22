@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.26.3 — 2026-10-22
+
+- Preserve each sample's LU Match switch during Natural oversampling, so a
+  later automation event cannot affect earlier audio in the processing chunk.
+
 ## 1.26.2 — 2026-10-21
 
 - Res Sup detection now follows the selected curve rather than a fixed Bell
