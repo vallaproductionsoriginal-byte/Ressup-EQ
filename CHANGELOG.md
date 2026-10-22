@@ -2,7 +2,7 @@
 
 ## 1.26.4 — 2026-10-22
 
-- Fix a Windows crash when opening the editor by reducing analyzer stack usage.
+- Fixed the broken Windows x64 VST3 that crashed the DAW when opening the editor.
 
 ## 1.26.3 — 2026-10-22
 
