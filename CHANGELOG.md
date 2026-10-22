@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.26.4 — 2026-10-22
+
+- Fix a Windows crash when opening the editor by reducing analyzer stack usage.
+
 ## 1.26.3 — 2026-10-22
 
 - Preserve each sample's LU Match switch during Natural oversampling, so a
