@@ -1,5 +1,8 @@
 # Ressup-EQ
 
+**v1.26.4 fixes the broken Windows x64 VST3** that crashed the DAW when opening
+the editor. [Download the fixed Windows x64 VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.26.4/Ressup-EQ-1.26.4-Windows-x64-VST3.zip).
+
 **Hear where tracks compete. Make room for both.**
 
 Kick and bass fill the same low end. A vocal gets buried when the guitars come
