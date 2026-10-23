@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.26.5 — 2026-10-23
+
+- Keep the selected band's parameter panel open during editing and analyzer updates.
+- Include Details, its handle and the spaces between controls in the editing area.
+- Preserve the selected band when the comparison exchange is temporarily busy.
+- Keep an unavailable reference band's panel visible with editing disabled;
+  restore editing when the source returns.
+
 ## 1.26.4 — 2026-10-22
 
 - Fixed the broken Windows x64 VST3 that crashed the DAW when opening the editor.
