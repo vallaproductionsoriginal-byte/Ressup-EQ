@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.27.2 — 2026-10-24
+
+- New Res Sup 2.0 algorithm.
+
 ## 1.26.5 — 2026-10-23
 
 - Keep the selected band's parameter panel open during editing and analyzer updates.
