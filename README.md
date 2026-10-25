@@ -20,7 +20,9 @@ Legacy detector. Older settings, presets and automation may not recall the same
 result, and an existing mix may sound different after updating. Keep a backup of
 your sessions and the previous plug-in version before opening older projects.
 
-![Ressup-EQ with the Res Sup 2.0 controls, including Soft detection, Peak Limit, Selectivity, Delta and realtime/offline quality](images/ressup-eq.png)
+![Ressup-EQ processing an audio example, with Pre/Post spectra, active Res Sup controls and the output level meter](images/ressup-eq.png)
+
+*An audio example with Pre/Post spectra and Res Sup in action.*
 
 ## What's new: Res Sup 2.0
 
