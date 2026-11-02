@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.27.3 — 2026-11-02
+
+- Fixed instance sidechain input on Windows VST3.
+
 ## 1.27.2 — 2026-10-24
 
 - New Res Sup 2.0 algorithm.
