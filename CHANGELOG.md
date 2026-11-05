@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.27.5 — 2026-11-05
+
+- Added switchable SC Freq and Q Sc Freq controls for independent sidechain detection.
+- Added a red spectrum marker showing the sidechain frequency and bandwidth.
+
 ## 1.27.3 — 2026-11-02
 
 - Fixed instance sidechain input on Windows VST3.

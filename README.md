@@ -8,9 +8,9 @@ from one window while listening to your mix.
 
 Made by **Francesco Valla · Valla Productions**.
 
-**Version 1.27.3** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.27.5** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-**[Download Ressup-EQ 1.27.3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.27.3)**
+**[Download Ressup-EQ 1.27.5](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.27.5)**
 
 ## Important: older projects
 
@@ -50,6 +50,18 @@ harmonics with positive Amount.
 Detector, Selectivity, Tilt, Delta and quality choices sit beside Attack and
 Release in the main Res Sup panel. Range, Auto timing and sidechain options stay
 in the Details drawer above it.
+
+In **Dynamics**, open Details and turn on **SC Freq** to choose the detector's
+centre frequency with **SC Freq** (10 Hz–30 kHz) and its bandwidth with
+**Q Sc Freq** (0.05–40; higher is narrower). For example, keep the EQ band at
+10 kHz and set SC Freq to 60 Hz so a kick controls the high-frequency band.
+Choose **External SC** for audio routed by the DAW, **MAIN** for bass in the
+same signal, or another instance from the source list. Turn the SC Freq button
+off for traditional detection following the EQ band's frequency and Q.
+**SC filter** independently enables the existing SC LOW/HIGH cuts.
+A red bar and a subtle shaded region in the spectrum show the selected band's
+SC frequency and bandwidth while SC Freq is on. Raising Q makes this region
+narrower; turning SC Freq off hides it.
 
 ## Start with what you hear
 
@@ -172,10 +184,10 @@ The AU works without a separate VST3 installation.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.3/Ressup-EQ-1.27.3-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.3/Ressup-EQ-1.27.3-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.3/Ressup-EQ-1.27.3-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
-| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.3/Ressup-EQ-1.27.3-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.5/Ressup-EQ-1.27.5-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.5/Ressup-EQ-1.27.5-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.5/Ressup-EQ-1.27.5-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.5/Ressup-EQ-1.27.5-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
 On Linux, create `~/.clap/` if needed and use a CLAP-compatible DAW. Standard
 fontconfig, FreeType and X11 desktop libraries are required. On Wayland, the
