@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.27.6 — 2026-11-05
+
+- Fixed Shift precision adjustment and instance renaming on Windows.
+- Improved mouse and keyboard input handling on Linux.
+
 ## 1.27.5 — 2026-11-05
 
 - Added switchable SC Freq and Q Sc Freq controls for independent sidechain detection.
