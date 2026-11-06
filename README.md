@@ -8,9 +8,9 @@ from one window while listening to your mix.
 
 Made by **Francesco Valla · Valla Productions**.
 
-**Version 1.27.6** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.27.7** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-**[Download Ressup-EQ 1.27.6](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.27.6)**
+**[Download Ressup-EQ 1.27.7](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.27.7)**
 
 ## Important: older projects
 
@@ -47,9 +47,9 @@ harmonics with positive Amount.
   changing sound during playback and export. Start with Normal and increase
   quality when the session has room for it.
 
-Detector, Selectivity, Tilt, Delta and quality choices sit beside Attack and
-Release in the main Res Sup panel. Range, Auto timing and sidechain options stay
-in the Details drawer above it.
+Detector, Selectivity, Tilt and Delta sit beside Attack and Release in the main
+Res Sup panel. Realtime and Offline quality are in **Settings** (the gear icon).
+Range, Auto timing and sidechain options stay in the Details drawer above it.
 
 In **Dynamics**, open Details and turn on **SC Freq** to choose the detector's
 centre frequency with **SC Freq** (10 Hz–30 kHz) and its bandwidth with
@@ -162,9 +162,20 @@ arrow when you want more room for the spectrum.
 
 **Detail 0–5** changes audio precision. Higher settings can separate closer peaks
 and refine narrow corrections, but use more CPU and can add latency. It is
-independent of the analyzer display's Resolution. Realtime and Offline choices
-let you set the detector quality for playback and export separately. If Offline
-is set to Realtime, export follows your playback choice.
+independent of the analyzer display's Resolution. **Settings** contains **Offline
+render Detail**, **Res Sup realtime** and **Res Sup offline**. Choose Detail 0–5
+for export, or Realtime to follow the instance's playback Detail. Res Sup quality
+sets the detector update rate separately for playback and export; its Realtime
+option follows the instance's playback Res Sup quality.
+
+**Global offline settings (all instances)** shares only the two offline choices
+across existing and future instances, including separate host processes and
+plug-in formats. It is enabled by default and saved automatically. Uncheck it
+to use each instance's own offline values, which are saved with the project.
+Checking it again shares the current instance's two offline values. Realtime
+quality and the analyzer settings remain per instance. **Save as default** saves
+the current instance's Settings as defaults for new instances; **Reset default**
+restores factory preferences, including the shared offline choices.
 
 ## Presets
 
@@ -184,10 +195,10 @@ The AU works without a separate VST3 installation.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.6/Ressup-EQ-1.27.6-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.6/Ressup-EQ-1.27.6-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.6/Ressup-EQ-1.27.6-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
-| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.6/Ressup-EQ-1.27.6-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.7/Ressup-EQ-1.27.7-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.7/Ressup-EQ-1.27.7-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.7/Ressup-EQ-1.27.7-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.7/Ressup-EQ-1.27.7-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
 On Linux, create `~/.clap/` if needed and use a CLAP-compatible DAW. Standard
 fontconfig, FreeType and X11 desktop libraries are required. On Wayland, the

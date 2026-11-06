@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.27.7 — 2026-11-06
+
+- Added optional global offline quality settings and moved Res Sup quality controls to Settings.
+- Improved band panel spacing and alignment.
+
 ## 1.27.6 — 2026-11-05
 
 - Fixed Shift precision adjustment and instance renaming on Windows.
