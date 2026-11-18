@@ -8,9 +8,9 @@ from one window while listening to your mix.
 
 Made by **Francesco Valla · Valla Productions**.
 
-**Version 1.27.7** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
+**Version 1.28.0** · macOS Apple Silicon: VST3 / AU · Windows x64: VST3 · Linux x86-64: CLAP
 
-**[Download Ressup-EQ 1.27.7](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.27.7)**
+**[Download Ressup-EQ 1.28.0](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/tag/v1.28.0)**
 
 ## Important: older projects
 
@@ -62,6 +62,13 @@ off for traditional detection following the EQ band's frequency and Q.
 A red bar and a subtle shaded region in the spectrum show the selected band's
 SC frequency and bandwidth while SC Freq is on. Raising Q makes this region
 narrower; turning SC Freq off hides it.
+
+## Work faster
+
+- **Undo / Redo** (Cmd/Ctrl+Z) and **A/B** snapshots are at the bottom right; they last until the DAW closes.
+- **Map** shows what Res Sup and Dynamics are changing over time.
+- **Make Room** appears while comparing two instances. It adds gentle dynamic cuts where the tracks compete, triggered by the other track. One Undo removes them.
+- **Broad** (next to Delta) follows wide regions such as sibilance or cymbals instead of single peaks.
 
 ## Start with what you hear
 
@@ -164,7 +171,9 @@ arrow when you want more room for the spectrum.
 and refine narrow corrections, but use more CPU and can add latency. It is
 independent of the analyzer display's Resolution. **Settings** contains **Offline
 render Detail**, **Res Sup realtime** and **Res Sup offline**. Choose Detail 0–5
-for export, or Realtime to follow the instance's playback Detail. Res Sup quality
+for the export's resonance analysis, or Realtime to follow the instance's playback
+Detail. Lookahead and Linear-phase filter length follow the playback Detail in
+both modes so that tracks stay aligned during export. Res Sup quality
 sets the detector update rate separately for playback and export; its Realtime
 option follows the instance's playback Res Sup quality.
 
@@ -195,10 +204,10 @@ The AU works without a separate VST3 installation.
 
 | Download | Requirements | Installation folder |
 | --- | --- | --- |
-| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.7/Ressup-EQ-1.27.7-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
-| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.7/Ressup-EQ-1.27.7-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
-| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.7/Ressup-EQ-1.27.7-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
-| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.27.7/Ressup-EQ-1.27.7-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
+| [Mac VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.28.0/Ressup-EQ-1.28.0-macOS-AppleSilicon-VST3.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/VST3/` |
+| [Mac AU](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.28.0/Ressup-EQ-1.28.0-macOS-AppleSilicon-AU.zip) | macOS 14+, Apple Silicon | `~/Library/Audio/Plug-Ins/Components/` |
+| [Windows VST3](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.28.0/Ressup-EQ-1.28.0-Windows-x64-VST3.zip) | Windows 10/11, x64 | `C:\Program Files\Common Files\VST3\` |
+| [Linux CLAP](https://github.com/vallaproductionsoriginal-byte/Ressup-EQ/releases/download/v1.28.0/Ressup-EQ-1.28.0-clap.1-Linux-x86_64-CLAP.zip) | Linux x86-64, glibc 2.35+ (Ubuntu 22.04+), X11/XWayland | `~/.clap/` |
 
 On Linux, create `~/.clap/` if needed and use a CLAP-compatible DAW. Standard
 fontconfig, FreeType and X11 desktop libraries are required. On Wayland, the

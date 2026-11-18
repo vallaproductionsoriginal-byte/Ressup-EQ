@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.28.0 — 2026-11-18
+
+- Fixed phase alignment in offline renders. Offline Detail can refine resonance detection while keeping the same lookahead and Linear-phase filter length as playback. VST3 updates host delay compensation even with the editor closed.
+- Added Undo/Redo, A/B snapshots, the activity map and Make Room across instances.
+- Added Broad resonance detection, improved Res Sup Q control and reduced CPU load in dense sessions.
+- Improved editor responsiveness and the EQ gain scale, corrected mono output metering and loudness matching, and fixed a potential crash when a host opens a project during playback.
+
+Projects saved with 1.28.0 require 1.28.0 or later.
+
 ## 1.27.7 — 2026-11-06
 
 - Added optional global offline quality settings and moved Res Sup quality controls to Settings.
